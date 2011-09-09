@@ -5,15 +5,11 @@
 
 
 #import <Foundation/Foundation.h>
-//#import <UIKit/UIKit.h>
-//#import <CoreData/CoreData.h>
-
 #import "Card.h"
 
 @interface MainView : UIView {
 	int xCap;
 	int yCap;
-	//Card* card;
 	
 	Card* activeCard;
 	NSMutableArray *cardArray;

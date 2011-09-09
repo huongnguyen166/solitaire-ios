@@ -14,9 +14,10 @@
 @synthesize cardLand;
 @synthesize isTurned;
 @synthesize cardParent;
+@synthesize zOrder;
 
 
-- (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand
+- (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z
 {
 	self = [super init];
 
@@ -29,6 +30,7 @@
 	point.y = y;
 	cardRect.origin = point;
 	cardRect.size = backgroundImage.size; 
+	zOrder = z;
 	
 	return self;
 	
