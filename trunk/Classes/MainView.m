@@ -16,42 +16,41 @@
 {
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
-		
 		cardArray = [[NSMutableArray alloc] init];
-		for (int i=0;i<10;i++)
+		for (int i=0;i<30;i++)
 		{
 			Card* c = [Card alloc];
-			[c initWithData:@"club.png":i*20:i*20:0:0];
+			[c initWithData:@"club.png":i*20:i*20:0:0:i];
 			[cardArray addObject:c];
 			[c release];
 			
 		}
-			 
-		//card = [Card alloc];
-		//[card initWithData:@"club.png":50:50:0:0];
-		
-		
-		
 	}
 	return self;
 }
 
 
 -(void)drawRect:(CGRect)rect {
-    CGContextRef    context = UIGraphicsGetCurrentContext();
+    //CGContextRef    context = UIGraphicsGetCurrentContext();
 	
+    // Game background
 	[[UIColor greenColor] set];
 	UIRectFill(rect);
 	
-    //CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
-	//[card.backgroundImage drawAtPoint:drawingTargetPoint];
-	
-	
+ 	
 	for(int i = 0 ; i < [cardArray count] ; i++)
 	{
 		Card* c = [cardArray objectAtIndex:i];
 		CGPoint drawingTargetPoint = CGPointMake(c.cardRect.origin.x,c.cardRect.origin.y);
 		[c.backgroundImage drawAtPoint:drawingTargetPoint];
+		
+	}
+	
+    // Draw active card on top of all others
+	if (activeCard)
+	{
+		CGPoint drawingTargetPoint = CGPointMake(activeCard.cardRect.origin.x,activeCard.cardRect.origin.y);
+		[activeCard.backgroundImage drawAtPoint:drawingTargetPoint];
 		
 	}
 	
@@ -72,13 +71,20 @@
 		{
 			xCap =  point.x - c.cardRect.origin.x;
 			yCap = point.y - c.cardRect.origin.y;
-			activeCard = c;
-			break;
+			
+			if (activeCard==nil)
+			{
+				activeCard = c;
+			}
+			else 
+			{
+                if (c.zOrder > activeCard.zOrder) 
+                    activeCard = c;
+			}
+			
 		}		
 		
-	}
-		
-	
+	}	
 }
 
 
@@ -86,7 +92,6 @@
 {
     UITouch* touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
- 	
 	
 	if (activeCard != nil)
 	{
@@ -99,7 +104,6 @@
 {
     UITouch* touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
-	
 	
 	if (activeCard!=nil)
 	{

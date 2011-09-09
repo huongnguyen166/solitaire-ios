@@ -14,9 +14,10 @@
 	int cardLand;
 	BOOL isTurned;
 	Card* cardParent;
+	int zOrder;
 	
 }
-- (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand;
+- (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z;
 - (void)setPos:(int)x:(int)y;
 
 
@@ -27,6 +28,6 @@
 @property int cardLand;
 @property BOOL isTurned;
 @property Card* cardParent;
-
+@property int zOrder;
 
 @end
