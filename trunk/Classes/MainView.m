@@ -17,8 +17,19 @@
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
 		
-		card = [Card alloc];
-		[card initWithData:@"club.png":50:50:0:0];
+		cardArray = [[NSMutableArray alloc] init];
+		for (int i=0;i<10;i++)
+		{
+			Card* c = [Card alloc];
+			[c initWithData:@"club.png":i*20:i*20:0:0];
+			[cardArray addObject:c];
+			[c release];
+			
+		}
+			 
+		//card = [Card alloc];
+		//[card initWithData:@"club.png":50:50:0:0];
+		
 		
 		
 	}
@@ -32,10 +43,17 @@
 	[[UIColor greenColor] set];
 	UIRectFill(rect);
 	
-    CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
-
-	[card.backgroundImage drawAtPoint:drawingTargetPoint];
+    //CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
+	//[card.backgroundImage drawAtPoint:drawingTargetPoint];
 	
+	
+	for(int i = 0 ; i < [cardArray count] ; i++)
+	{
+		Card* c = [cardArray objectAtIndex:i];
+		CGPoint drawingTargetPoint = CGPointMake(c.cardRect.origin.x,c.cardRect.origin.y);
+		[c.backgroundImage drawAtPoint:drawingTargetPoint];
+		
+	}
 	
 }
 
@@ -45,15 +63,21 @@
     UITouch* touchPoint = [touches anyObject]; 
     CGPoint point = [touchPoint locationInView:self];   
 	
-	if (CGRectContainsPoint(card.cardRect,point))
-	{
-		xCap =  point.x - card.cardRect.origin.x;
-		yCap = point.y - card.cardRect.origin.y;
-		
-		
-		[self setNeedsDisplay];
-	}
+	activeCard = nil;
 	
+	for(int i = 0 ; i < [cardArray count] ; i++)
+	{
+		Card* c = [cardArray objectAtIndex:i];
+		if (CGRectContainsPoint(c.cardRect,point))
+		{
+			xCap =  point.x - c.cardRect.origin.x;
+			yCap = point.y - c.cardRect.origin.y;
+			activeCard = c;
+			break;
+		}		
+		
+	}
+		
 	
 }
 
@@ -64,9 +88,9 @@
     CGPoint point = [touch locationInView:self];
  	
 	
-	if (CGRectContainsPoint(card.cardRect,point))
+	if (activeCard != nil)
 	{
-		[card setPos:point.x - xCap:point.y - yCap];
+		[activeCard setPos:point.x - xCap:point.y - yCap];
 		[self setNeedsDisplay];
 	}
 }
@@ -77,10 +101,11 @@
     CGPoint point = [touch locationInView:self];
 	
 	
-	if (CGRectContainsPoint(card.cardRect,point))
+	if (activeCard!=nil)
 	{
-		[card setPos:point.x - xCap:point.y - yCap];
+		[activeCard setPos:point.x - xCap:point.y - yCap];
 		[self setNeedsDisplay];
+		activeCard = nil;
 	}
 }
 
