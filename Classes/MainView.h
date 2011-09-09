@@ -13,7 +13,10 @@
 @interface MainView : UIView {
 	int xCap;
 	int yCap;
-	Card* card;
+	//Card* card;
+	
+	Card* activeCard;
+	NSMutableArray *cardArray;
 	
 }
 
