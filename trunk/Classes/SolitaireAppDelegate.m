@@ -1,10 +1,8 @@
-//
-//  SolitaireAppDelegate.m
-//  Solitaire
-//
-//  Created by Mac Mini on 5.9.2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+
+// Solitaire for iOS
+// tepaanan@gmail.com
+// FINLAND
+
 
 #import "SolitaireAppDelegate.h"
 #import "SolitaireViewController.h"
