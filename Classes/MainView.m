@@ -1,28 +1,26 @@
-//
-//  MainView.m
-//  Solitaire
-//
-//  Created by Mac Mini on 5.9.2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+
+// Solitaire for iOS
+// tepaanan@gmail.com
+// FINLAND
+
 
 #import "MainView.h"
 
 
 @implementation MainView
 
-@synthesize backgroundImage;
-@synthesize fromPoint;
-@synthesize toPoint;
+//@synthesize card;
+
 
 -(id) initWithCoder:(NSCoder*)sourceCoder
 {
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
-		// place any other initialization here
-		backgroundImage = [UIImage imageNamed:@"club.png"];
-		toPoint.x = 100;
-		toPoint.y = 100;
+		
+		card = [Card alloc];
+		[card initWithData:@"club.png":50:50:0:0];
+		
+		
 	}
 	return self;
 }
@@ -34,9 +32,10 @@
 	[[UIColor greenColor] set];
 	UIRectFill(rect);
 	
-    CGPoint drawingTargetPoint = CGPointMake(toPoint.x,toPoint.y);
-	[backgroundImage drawAtPoint:drawingTargetPoint];
+    CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
 
+	[card.backgroundImage drawAtPoint:drawingTargetPoint];
+	
 	
 }
 
@@ -46,14 +45,10 @@
     UITouch* touchPoint = [touches anyObject]; 
     CGPoint point = [touchPoint locationInView:self];   
 	
-	CGRect rect;
-	rect.origin = toPoint;
-	rect.size = backgroundImage.size; 
-
-	if (CGRectContainsPoint(rect,point))
+	if (CGRectContainsPoint(card.cardRect,point))
 	{
-		xCap =  point.x - toPoint.x;
-		yCap = point.y - toPoint.y;
+		xCap =  point.x - card.cardRect.origin.x;
+		yCap = point.y - card.cardRect.origin.y;
 		
 		
 		[self setNeedsDisplay];
@@ -67,17 +62,12 @@
 {
     UITouch* touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
-
-	CGRect rect;
-	rect.origin = toPoint;
-    rect.size = backgroundImage.size; 	
+ 	
 	
-	if (CGRectContainsPoint(rect,point))
+	if (CGRectContainsPoint(card.cardRect,point))
 	{
-	toPoint.x = point.x - xCap;
-	toPoint.y = point.y - yCap;
-	
-    [self setNeedsDisplay];
+		[card setPos:point.x - xCap:point.y - yCap];
+		[self setNeedsDisplay];
 	}
 }
 
@@ -86,17 +76,11 @@
     UITouch* touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
 	
-	CGRect rect;
-	rect.origin = toPoint;
-    rect.size = backgroundImage.size; 
 	
-	if (CGRectContainsPoint(rect,point))
+	if (CGRectContainsPoint(card.cardRect,point))
 	{
-		
-	toPoint.x = point.x - xCap;
-	toPoint.y = point.y - yCap;
-	
-    [self setNeedsDisplay];
+		[card setPos:point.x - xCap:point.y - yCap];
+		[self setNeedsDisplay];
 	}
 }
 
