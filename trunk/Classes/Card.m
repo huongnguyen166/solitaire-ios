@@ -21,6 +21,8 @@
 {
 	self = [super init];
 
+    if (self)
+    {
 	
 	//backgroundImage = [UIImage imageNamed:@"club.png"];
 	backgroundImage = [UIImage imageNamed:cardName];
@@ -31,6 +33,7 @@
 	cardRect.origin = point;
 	cardRect.size = backgroundImage.size; 
 	zOrder = z;
+    }
 	
 	return self;
 	

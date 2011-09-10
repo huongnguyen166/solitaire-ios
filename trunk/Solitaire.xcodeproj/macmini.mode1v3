@@ -273,7 +273,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>7</integer>
+									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -316,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainView.m</string>
+								<string>Card.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainView.m</string>
+										<string>Card.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9A7A24931419DE790017AA52</string>
+										<string>9A7A250C1419EA790017AA52</string>
 										<key>history</key>
 										<array>
 											<string>9A821B1114188EB20037F2AB</string>
@@ -341,10 +341,10 @@
 											<string>9A7A24521419DAE80017AA52</string>
 											<string>9A7A248D1419DE790017AA52</string>
 											<string>9A7A248E1419DE790017AA52</string>
-											<string>9A7A248F1419DE790017AA52</string>
-											<string>9A7A24901419DE790017AA52</string>
-											<string>9A7A24911419DE790017AA52</string>
-											<string>9A7A24921419DE790017AA52</string>
+											<string>9A7A25071419EA5D0017AA52</string>
+											<string>9A7A25081419EA5D0017AA52</string>
+											<string>9A7A25091419EA5D0017AA52</string>
+											<string>9A7A24ED1419E83C0017AA52</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -542,7 +542,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>9A7A24941419DE790017AA52</string>
 		<string>9A7A245A1419DAE80017AA52</string>
 		<string>9A7A245B1419DAE80017AA52</string>
 		<string>1C78EAAD065D492600B07095</string>
