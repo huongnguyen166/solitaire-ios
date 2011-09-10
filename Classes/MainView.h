@@ -6,13 +6,14 @@
 
 #import <Foundation/Foundation.h>
 #import "Card.h"
+#import "Deck.h"
 
 @interface MainView : UIView {
 	int xCap;
 	int yCap;
 	
-	Card* activeCard;
-	NSMutableArray *cardArray;
+	Card* activeCard;    
+    Deck* sourceDeck;
 	
 }
 
@@ -22,6 +23,5 @@
 
 
 
-//@property Card* card;
 
 @end
