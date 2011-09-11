@@ -17,10 +17,10 @@
 	{
         sourceDeck = [Deck alloc];
         [sourceDeck initWithData:50:50:1];
-		for (int i=0;i<30;i++)
+		for (int i=0;i<3;i++)
 		{
 			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:1];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i];
             [sourceDeck addCard:card];
             [card release];
             card = nil;
