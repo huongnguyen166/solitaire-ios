@@ -19,13 +19,25 @@
         [sourceDeck initWithData:50:50:1];
 		for (int i=0;i<30;i++)
 		{
-			Card* c = [Card alloc];
-            [c initWithData:@"Club_ace.png":0:0:0:0:1];
-            [sourceDeck addCard:c];
-			
+			Card* card = [Card alloc];
+            [card initWithData:@"Club_ace.png":0:0:0:0:1];
+            [sourceDeck addCard:card];
+            [card release];
+            card = nil;
 		}
 	}
 	return self;
+}
+
+- (void)dealloc {
+	[sourceDeck release];
+    sourceDeck = nil;
+    
+    [activeCard release];
+    activeCard = nil;
+    
+	// Remember to call base class dealloc
+    [super dealloc];
 }
 
 
@@ -83,7 +95,6 @@
         CGPoint point = [touch locationInView:self];
 		[activeCard setPos:point.x - xCap:point.y - yCap];
 		[self setNeedsDisplay];
-        //[activeCard release]; // TODO: ?
 		activeCard = nil;
 	}
     

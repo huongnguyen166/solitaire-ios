@@ -1,10 +1,6 @@
-//
-//  Deck.m
-//  Solitaire
-//
-//  Created by Mac Mini on 10.9.2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
+// Solitaire for iOS
+// tepaanan@gmail.com
+// FINLAND
 
 #import "Deck.h"
 
@@ -22,31 +18,36 @@
     
     if (self)
     {
+        // Create card array for the deck
         cardArray = [[NSMutableArray alloc] init];
+
+        // Set deck size and position
         UIImage* backgroundImage = [UIImage imageNamed:@"Club_ace.png"];
-        deckId = dId;
+        deckRect.size = backgroundImage.size;
         CGPoint point;
         point.x = x;
         point.y = y;
         deckRect.origin = point;
-        deckRect.size = backgroundImage.size; 
+        deckId = dId;
         [backgroundImage release];
-        
     }
-    
     return self;
 }
 
 - (void)dealloc {
+    // Rekease array
 	[cardArray release];
-	[super dealloc];
+	// Remember to call base class dealloc
+    [super dealloc];
 }
 
 - (void)addCard:(Card*)card
 {
+    // Set card new position
     [card setPos:deckRect.origin.x:deckRect.origin.y];
-    [cardArray addObject:card];
-    [card release];
+    
+    // Card ownership is transfered to array
+    [cardArray addObject:card];    
 }
 
 - (void)removeCard:(Card*)card
@@ -56,37 +57,39 @@
 
 -(void)drawDeck 
 {
- 	for(int i = 0 ; i < [cardArray count] ; i++)
+    for(int i = 0 ; i < [cardArray count] ; i++)
 	{
-		Card* c = [cardArray objectAtIndex:i];
-		CGPoint drawingTargetPoint = CGPointMake(c.cardRect.origin.x,c.cardRect.origin.y);
-		[c.backgroundImage drawAtPoint:drawingTargetPoint];
-		
+		Card* card = [[cardArray objectAtIndex:i]retain];
+		CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
+		[card.backgroundImage drawAtPoint:drawingTargetPoint];
+        [card release];
+		card = nil;
 	}
 	
 }
 
 - (Card*)getCardAtPos:(CGPoint)point
 {
+    // Try to find card under (touch) point
     Card* activeCard = nil;
     for(int i = 0 ; i < [cardArray count] ; i++)
     {
-        Card* c = [[cardArray objectAtIndex:i]retain]; // TODO: copy,retain,assign?
-//        Card* c = [cardArray objectAtIndex:i];
-        if (CGRectContainsPoint(c.cardRect,point))
+        Card* card = [cardArray objectAtIndex:i];
+        if (CGRectContainsPoint(card.cardRect,point))
         {
             if (activeCard==nil)
             {
-                activeCard = c;
+                activeCard = card;
             }
             else 
             {
-                if (c.zOrder > activeCard.zOrder) 
-                    activeCard = c;
+                if (card.zOrder > activeCard.zOrder) 
+                    activeCard = card;
             }
         
         }		
     }
+    // Return fourd card
 	return activeCard;
 }
 
