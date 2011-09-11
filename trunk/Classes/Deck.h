@@ -24,8 +24,7 @@
 - (void)dealloc;
 
 
-//@property (nonatomic,retain) NSMutableArray* cardArray;
-@property NSMutableArray* cardArray;
+@property (retain) NSMutableArray* cardArray;
 @property int deckId;
 @property CGRect deckRect;
 

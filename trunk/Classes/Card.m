@@ -23,10 +23,10 @@
 
     if (self)
     {
-	
-	//backgroundImage = [UIImage imageNamed:@"club.png"];
+    // Load card graphics
 	backgroundImage = [UIImage imageNamed:cardName];
 	
+    // Set card position and z order
 	CGPoint point;
 	point.x = x;
 	point.y = y;
@@ -36,7 +36,14 @@
     }
 	
 	return self;
-	
+}
+
+- (void)dealloc {
+	[backgroundImage release];
+    backgroundImage = nil;
+
+	// Remember to call base class dealloc
+    [super dealloc];
 }
 
 - (void)setPos:(int)x:(int)y
@@ -45,7 +52,6 @@
 	point.x = x;
 	point.y = y;
 	cardRect.origin = point;
-	
 }
 
 
