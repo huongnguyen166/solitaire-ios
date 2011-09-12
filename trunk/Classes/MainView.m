@@ -88,6 +88,25 @@
     return card;
 }
 
+-(Deck*)findActiveDeck:(CGPoint)point
+{
+    Deck* deck = nil;
+    
+    // TODO: make better
+    
+    if (CGRectContainsPoint(self.sourceDeck.deckRect,point))
+    {
+        deck = self.sourceDeck;
+    }
+    else if(CGRectContainsPoint(self.sourceDeck2.deckRect,point))
+    {
+        deck = self.sourceDeck2;
+    }
+    
+    
+    return deck;
+}
+
 -(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
     UITouch* touchPoint = [touches anyObject]; 
@@ -124,7 +143,15 @@
         CGPoint point = [touch locationInView:self];
 		[_activeCard setPos:point.x - xCap:point.y - yCap];
 		
-        [_activeCard cancelMove];
+        
+        // Change car deck to another
+        Deck* toDeck = [self findActiveDeck:point];
+        if (toDeck) {
+            [_activeCard changeDeckTo:_activeCard.ownerDeck:toDeck];
+        } else {
+            [_activeCard cancelMove];
+        }
+    
         
         [self setNeedsDisplay];
 		_activeCard = nil;

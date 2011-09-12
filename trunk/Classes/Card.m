@@ -4,7 +4,7 @@
 // FINLAND
 
 #import "Card.h"
-
+#import "Deck.h"
 
 @implementation Card
 
@@ -16,6 +16,8 @@
 @synthesize cardParent = _cardParent;
 @synthesize zOrder = _zOrder;
 @synthesize oldPoint = _oldPoint;
+@synthesize ownerDeck = _ownerDeck;
+
 
 
 - (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z
@@ -69,6 +71,24 @@
 	self.cardRect = newRect;
 }
 
+-(void)setDeck:(Deck*)deck
+{
+    _ownerDeck = deck;
+}
+
+-(void)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck
+{
+    if (fromDeck != toDeck)
+    {
+    
+    // Add to new deck
+    [toDeck addCard:self];
+    
+    // Remove from old deck
+    [fromDeck removeCard:self];
+        
+    }
+}
 
 
 
