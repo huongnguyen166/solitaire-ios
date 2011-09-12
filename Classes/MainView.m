@@ -99,6 +99,8 @@
     {
         xCap = point.x - _activeCard.cardRect.origin.x;
         yCap = point.y - _activeCard.cardRect.origin.y;
+        
+        [_activeCard storeCurrentPos];
 	}
 }
 
@@ -121,7 +123,10 @@
         UITouch* touch = [touches anyObject];
         CGPoint point = [touch locationInView:self];
 		[_activeCard setPos:point.x - xCap:point.y - yCap];
-		[self setNeedsDisplay];
+		
+        [_activeCard cancelMove];
+        
+        [self setNeedsDisplay];
 		_activeCard = nil;
 	}
     

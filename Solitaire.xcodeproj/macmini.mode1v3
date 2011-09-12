@@ -274,7 +274,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
+									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainView.m</string>
+								<string>Card.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainView.m</string>
+										<string>Card.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9A78FF35141DEEDB00A9934D</string>
+										<string>9A78FF5E141DF18E00A9934D</string>
 										<key>history</key>
 										<array>
 											<string>9A821B1114188EB20037F2AB</string>
@@ -344,13 +344,13 @@
 											<string>9A781800141B3F3D00FA36D9</string>
 											<string>9A7834F9141D4E03002F4BFC</string>
 											<string>9A78FEBA141DE68200A9934D</string>
-											<string>9A78FEBB141DE68200A9934D</string>
-											<string>9A78FEEF141DE7FD00A9934D</string>
 											<string>9A78FEF8141DEA4D00A9934D</string>
 											<string>9A78FEF9141DEA4D00A9934D</string>
-											<string>9A78FF0A141DEB6300A9934D</string>
 											<string>9A78FF2B141DEE6C00A9934D</string>
-											<string>9A78FF2C141DEE6C00A9934D</string>
+											<string>9A78FF52141DF0ED00A9934D</string>
+											<string>9A78FF5B141DF18E00A9934D</string>
+											<string>9A78FF5C141DF18E00A9934D</string>
+											<string>9A78FF5D141DF18E00A9934D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -548,7 +548,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>9A78FF36141DEEDB00A9934D</string>
+		<string>9A78FF5F141DF18E00A9934D</string>
 		<string>9A78FED3141DE6C000A9934D</string>
 		<string>9A78FECC141DE68200A9934D</string>
 		<string>1C78EAAD065D492600B07095</string>

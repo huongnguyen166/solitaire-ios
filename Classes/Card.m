@@ -15,6 +15,7 @@
 @synthesize isTurned = _isTurned;
 @synthesize cardParent = _cardParent;
 @synthesize zOrder = _zOrder;
+@synthesize oldPoint = _oldPoint;
 
 
 - (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z
@@ -46,6 +47,16 @@
 
 	// Remember to call base class dealloc
     [super dealloc];
+}
+
+- (void)storeCurrentPos
+{
+    self.oldPoint = self.cardRect.origin;
+}
+
+- (void)cancelMove
+{
+    [self setPos:self.oldPoint.x:self.oldPoint.y];
 }
 
 - (void)setPos:(int)x:(int)y

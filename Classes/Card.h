@@ -15,11 +15,14 @@
 	BOOL _isTurned;
 	Card* _cardParent;
 	int _zOrder;
+    CGPoint _oldPoint;
 	
 }
 - (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z;
 - (void)setPos:(int)x:(int)y;
 - (void)dealloc;
+- (void)storeCurrentPos;
+- (void)cancelMove;
 
 
 @property (nonatomic, retain) UIImage* backgroundImage;
@@ -29,5 +32,6 @@
 @property BOOL isTurned;
 @property (nonatomic, retain) Card* cardParent;
 @property int zOrder;
+@property CGPoint oldPoint;
 
 @end
