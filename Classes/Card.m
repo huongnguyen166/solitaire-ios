@@ -35,7 +35,10 @@
 	point.y = y;
     CGRect rect;
     rect.origin = point;
-    rect.size = self.backgroundImage.size;
+    //rect.size = self.backgroundImage.size;
+    // TODO: calc proper size
+    rect.size.width = 50;
+    rect.size.height = 80;
     self.cardRect = rect;        
 	self.zOrder = z;
     }
@@ -49,6 +52,11 @@
 
 	// Remember to call base class dealloc
     [super dealloc];
+}
+
+- (void)drawCard
+{
+    [self.backgroundImage drawInRect:self.cardRect];
 }
 
 - (void)storeCurrentPos

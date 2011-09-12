@@ -29,6 +29,7 @@
 - (void)cancelMove;
 - (void)setDeck:(Deck*)deck;
 - (BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck;
+- (void)drawCard; 
 
 @property (nonatomic, retain) UIImage* backgroundImage;
 @property CGRect cardRect;

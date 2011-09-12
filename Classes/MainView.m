@@ -69,9 +69,10 @@
     // Draw active card on top of all others
 	if (_activeCard)
 	{
-		CGPoint drawingTargetPoint = CGPointMake(_activeCard.cardRect.origin.x,
-                                                 _activeCard.cardRect.origin.y);
-		[_activeCard.backgroundImage drawAtPoint:drawingTargetPoint];
+		[_activeCard drawCard];
+        //CGPoint drawingTargetPoint = CGPointMake(_activeCard.cardRect.origin.x,
+        //                                         _activeCard.cardRect.origin.y);
+		//[_activeCard.backgroundImage drawAtPoint:drawingTargetPoint];
 		
 	}
 	
