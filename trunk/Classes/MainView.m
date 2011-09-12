@@ -19,7 +19,7 @@
         // Source decks
         self.sourceDeck = [Deck alloc];
         [self.sourceDeck initWithData:50:100:1];
-		for (int i=0;i<3;i++)
+		for (int i=0;i<10;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i];
@@ -30,7 +30,7 @@
         
         self.sourceDeck2 = [Deck alloc];
         [self.sourceDeck2 initWithData:150:100:2];
-		for (int i=0;i<3;i++)
+		for (int i=0;i<5;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i];
@@ -147,7 +147,9 @@
         // Change car deck to another
         Deck* toDeck = [self findActiveDeck:point];
         if (toDeck) {
-            [_activeCard changeDeckTo:_activeCard.ownerDeck:toDeck];
+            BOOL ret = [_activeCard changeDeckTo:_activeCard.ownerDeck:toDeck];
+            if (!ret) 
+               [_activeCard cancelMove]; 
         } else {
             [_activeCard cancelMove];
         }
