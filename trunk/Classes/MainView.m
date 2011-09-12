@@ -16,24 +16,30 @@
 {
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
+        int screenWidth = self.bounds.size.width;
+        int screenHeight = self.bounds.size.height;
+        int cardWidth = screenWidth / 9;
+        int cardHeight = cardWidth * 1.7;
+        int cap = (screenWidth - cardWidth*7) / 8;
+        
         // Source decks
         self.sourceDeck = [Deck alloc];
-        [self.sourceDeck initWithData:50:100:1];
+        [self.sourceDeck initWithData:cap:cardHeight*2:1:cardWidth:cardHeight];
 		for (int i=0;i<10;i++)
 		{
 			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
             [self.sourceDeck addCard:card];
             [card release];
             card = nil;
 		}
         
         self.sourceDeck2 = [Deck alloc];
-        [self.sourceDeck2 initWithData:150:100:2];
+        [self.sourceDeck2 initWithData:cap*2+cardWidth:cardHeight*2:2:cardWidth:cardHeight];
 		for (int i=0;i<5;i++)
 		{
 			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
             [self.sourceDeck2 addCard:card];
             [card release];
             card = nil;

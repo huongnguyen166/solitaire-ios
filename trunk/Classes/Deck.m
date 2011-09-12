@@ -13,7 +13,7 @@
 @synthesize deckZ = _deckZ;
 
 
-- (id)initWithData:(int)x:(int)y:(int)dId
+- (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height
 {
 	self = [super init];
     
@@ -25,17 +25,19 @@
         self.deckZ = 0;
         
         // Set deck size and position
-        UIImage* backgroundImage = [UIImage imageNamed:@"Club_ace.png"];
+        //UIImage* backgroundImage = [UIImage imageNamed:@"Club_ace.png"];
         CGRect rect;
         CGPoint point;
         point.x = x;
         point.y = y;
         rect.origin = point;
-        rect.size = backgroundImage.size;
+        //rect.size = backgroundImage.size;
+        rect.size.width = width;
+        rect.size.height = height;
         self.deckRect = rect;
         self.deckId = dId;
         
-        [backgroundImage release];
+        //[backgroundImage release];
     }
     return self;
 }

@@ -20,7 +20,7 @@
 
 
 
-- (id)initWithData:(int)x:(int)y:(int)dId;
+- (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height;
 - (void)addCard:(Card*)card;
 - (void)removeCard:(Card*)card;
 - (void)drawDeck; 

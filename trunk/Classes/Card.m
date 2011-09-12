@@ -20,7 +20,8 @@
 
 
 
-- (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z
+- (id)initWithData:(NSString*)cardName:
+    (int)x:(int)y:(int)cId:(int)cLand:(int)z:(int)width:(int)height
 {
 	self = [super init];
 
@@ -35,10 +36,8 @@
 	point.y = y;
     CGRect rect;
     rect.origin = point;
-    //rect.size = self.backgroundImage.size;
-    // TODO: calc proper size
-    rect.size.width = 50;
-    rect.size.height = 80;
+    rect.size.width = width;
+    rect.size.height = height;
     self.cardRect = rect;        
 	self.zOrder = z;
     }
