@@ -12,8 +12,8 @@
 	int xCap;
 	int yCap;
 	
-	Card* activeCard;    
-    Deck* sourceDeck;
+	Card* _activeCard;    
+    Deck* _sourceDeck;
 	
 }
 
@@ -22,6 +22,8 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)dealloc;
 
+@property (nonatomic, retain) Card* activeCard;
+@property (nonatomic, retain) Deck* sourceDeck;
 
 
 @end

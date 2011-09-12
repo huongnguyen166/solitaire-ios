@@ -9,19 +9,20 @@
 
 @implementation MainView
 
-
+@synthesize sourceDeck = _sourceDeck;
+@synthesize activeCard = _activeCard;
 
 -(id) initWithCoder:(NSCoder*)sourceCoder
 {
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
-        sourceDeck = [Deck alloc];
-        [sourceDeck initWithData:50:50:1];
+        self.sourceDeck = [Deck alloc];
+        [self.sourceDeck initWithData:50:50:1];
 		for (int i=0;i<3;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i];
-            [sourceDeck addCard:card];
+            [self.sourceDeck addCard:card];
             [card release];
             card = nil;
 		}
@@ -30,11 +31,11 @@
 }
 
 - (void)dealloc {
-	[sourceDeck release];
-    sourceDeck = nil;
+	[_sourceDeck release];
+    _sourceDeck = nil;
     
-    [activeCard release];
-    activeCard = nil;
+    [_activeCard release];
+    _activeCard = nil;
     
 	// Remember to call base class dealloc
     [super dealloc];
@@ -49,13 +50,14 @@
 	UIRectFill(rect);
 	
     // Draw decks
-    [sourceDeck drawDeck];
+    [self.sourceDeck drawDeck];
 	
     // Draw active card on top of all others
-	if (activeCard)
+	if (self.activeCard)
 	{
-		CGPoint drawingTargetPoint = CGPointMake(activeCard.cardRect.origin.x,activeCard.cardRect.origin.y);
-		[activeCard.backgroundImage drawAtPoint:drawingTargetPoint];
+		CGPoint drawingTargetPoint = CGPointMake(self.activeCard.cardRect.origin.x,
+                                                 self.activeCard.cardRect.origin.y);
+		[self.activeCard.backgroundImage drawAtPoint:drawingTargetPoint];
 		
 	}
 	
@@ -67,35 +69,35 @@
     UITouch* touchPoint = [touches anyObject]; 
     CGPoint point = [touchPoint locationInView:self];   
 	
-    activeCard = [sourceDeck getCardAtPos:point];
-    if (activeCard)
+    self.activeCard = [self.sourceDeck getCardAtPos:point];
+    if (self.activeCard)
     {
-        xCap =  point.x - activeCard.cardRect.origin.x;
-        yCap = point.y - activeCard.cardRect.origin.y;
+        xCap = point.x - self.activeCard.cardRect.origin.x;
+        yCap = point.y - self.activeCard.cardRect.origin.y;
 	}
 }
 
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	if (activeCard)
+	if (self.activeCard)
 	{
         UITouch* touch = [touches anyObject];
         CGPoint point = [touch locationInView:self];
-		[activeCard setPos:point.x - xCap:point.y - yCap];
+		[self.activeCard setPos:point.x - xCap:point.y - yCap];
 		[self setNeedsDisplay];
 	}
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {	
-	if (activeCard)
+	if (self.activeCard)
 	{
         UITouch* touch = [touches anyObject];
         CGPoint point = [touch locationInView:self];
-		[activeCard setPos:point.x - xCap:point.y - yCap];
+		[self.activeCard setPos:point.x - xCap:point.y - yCap];
 		[self setNeedsDisplay];
-		activeCard = nil;
+		self.activeCard = nil;
 	}
     
 }
