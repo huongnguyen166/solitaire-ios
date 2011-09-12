@@ -7,9 +7,9 @@
 
 @implementation Deck
 
-@synthesize cardArray;
-@synthesize deckId;
-@synthesize deckRect;
+@synthesize cardArray = _cardArray;
+@synthesize deckId = _deckId;
+@synthesize deckRect = _deckRect;
 
 
 - (id)initWithData:(int)x:(int)y:(int)dId
@@ -19,16 +19,19 @@
     if (self)
     {
         // Create card array for the deck
-        cardArray = [[NSMutableArray alloc] init];
+        self.cardArray = [[NSMutableArray alloc] init];
 
         // Set deck size and position
         UIImage* backgroundImage = [UIImage imageNamed:@"Club_ace.png"];
-        deckRect.size = backgroundImage.size;
+        CGRect rect;
         CGPoint point;
         point.x = x;
         point.y = y;
-        deckRect.origin = point;
-        deckId = dId;
+        rect.origin = point;
+        rect.size = backgroundImage.size;
+        self.deckRect = rect;
+        self.deckId = dId;
+        
         [backgroundImage release];
     }
     return self;
@@ -36,7 +39,8 @@
 
 - (void)dealloc {
     // Rekease array
-	[cardArray release];
+	[_cardArray release];
+    _cardArray = nil;
 	// Remember to call base class dealloc
     [super dealloc];
 }
@@ -44,10 +48,10 @@
 - (void)addCard:(Card*)card
 {
     // Set card new position
-    [card setPos:deckRect.origin.x:deckRect.origin.y];
+    [card setPos:self.deckRect.origin.x:self.deckRect.origin.y];
     
     // Card ownership is transfered to array
-    [cardArray addObject:card];    
+    [self.cardArray addObject:card];    
 }
 
 - (void)removeCard:(Card*)card
@@ -57,13 +61,12 @@
 
 -(void)drawDeck 
 {
-    for(int i = 0 ; i < [cardArray count] ; i++)
+    for(int i = 0 ; i < [self.cardArray count] ; i++)
 	{
-		Card* card = [[cardArray objectAtIndex:i]retain];
+		// TODO: memory leak?
+        Card* card = [self.cardArray objectAtIndex:i];
 		CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
 		[card.backgroundImage drawAtPoint:drawingTargetPoint];
-        [card release];
-		card = nil;
 	}
 	
 }
@@ -72,9 +75,10 @@
 {
     // Try to find card under (touch) point
     Card* activeCard = nil;
-    for(int i = 0 ; i < [cardArray count] ; i++)
+    for(int i = 0 ; i < [self.cardArray count] ; i++)
     {
-        Card* card = [cardArray objectAtIndex:i];
+        // TODO: memory leak?
+        Card* card = [self.cardArray objectAtIndex:i];
         if (CGRectContainsPoint(card.cardRect,point))
         {
             if (activeCard==nil)

@@ -9,9 +9,9 @@
 
 @interface Deck : NSObject {
 
-    NSMutableArray* cardArray;
-    int deckId;
-	CGRect deckRect;
+    NSMutableArray* _cardArray;
+    int _deckId;
+	CGRect _deckRect;
 
 
 }
@@ -24,7 +24,7 @@
 - (void)dealloc;
 
 
-@property (retain) NSMutableArray* cardArray;
+@property (nonatomic, retain) NSMutableArray* cardArray;
 @property int deckId;
 @property CGRect deckRect;
 

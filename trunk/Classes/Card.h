@@ -8,13 +8,13 @@
 
 
 @interface Card : NSObject {
-	UIImage* backgroundImage;
-	CGRect cardRect;
-	int cardId;
-	int cardLand;
-	BOOL isTurned;
-	Card* cardParent;
-	int zOrder;
+	UIImage* _backgroundImage;
+	CGRect _cardRect;
+	int _cardId;
+	int _cardLand;
+	BOOL _isTurned;
+	Card* _cardParent;
+	int _zOrder;
 	
 }
 - (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z;
@@ -22,12 +22,12 @@
 - (void)dealloc;
 
 
-@property (retain) UIImage* backgroundImage;
+@property (nonatomic, retain) UIImage* backgroundImage;
 @property CGRect cardRect;
 @property int cardId;
 @property int cardLand;
 @property BOOL isTurned;
-@property (retain) Card* cardParent;
+@property (nonatomic, retain) Card* cardParent;
 @property int zOrder;
 
 @end

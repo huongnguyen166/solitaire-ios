@@ -8,13 +8,13 @@
 
 @implementation Card
 
-@synthesize backgroundImage;
-@synthesize cardRect;
-@synthesize cardId;
-@synthesize cardLand;
-@synthesize isTurned;
-@synthesize cardParent;
-@synthesize zOrder;
+@synthesize backgroundImage = _backgroundImage;
+@synthesize cardRect = _cardRect;
+@synthesize cardId = _cardId;
+@synthesize cardLand = _cardLand;
+@synthesize isTurned = _isTurned;
+@synthesize cardParent = _cardParent;
+@synthesize zOrder = _zOrder;
 
 
 - (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z
@@ -24,23 +24,25 @@
     if (self)
     {
     // Load card graphics
-	backgroundImage = [UIImage imageNamed:cardName];
+	self.backgroundImage = [UIImage imageNamed:cardName];
 	
     // Set card position and z order
 	CGPoint point;
 	point.x = x;
 	point.y = y;
-	cardRect.origin = point;
-	cardRect.size = backgroundImage.size; 
-	zOrder = z;
+    CGRect rect;
+    rect.origin = point;
+    rect.size = self.backgroundImage.size;
+    self.cardRect = rect;        
+	self.zOrder = z;
     }
 	
 	return self;
 }
 
 - (void)dealloc {
-	[backgroundImage release];
-    backgroundImage = nil;
+	[_backgroundImage release];
+    _backgroundImage = nil;
 
 	// Remember to call base class dealloc
     [super dealloc];
@@ -48,10 +50,12 @@
 
 - (void)setPos:(int)x:(int)y
 {
+    CGRect newRect = self.cardRect;
 	CGPoint point;
 	point.x = x;
 	point.y = y;
-	cardRect.origin = point;
+    newRect.origin = point;
+	self.cardRect = newRect;
 }
 
 
