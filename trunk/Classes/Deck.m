@@ -84,8 +84,10 @@
     for(int i = 0 ; i < [self.cardArray count] ; i++)
 	{
         Card* card = [self.cardArray objectAtIndex:i];
-		CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
-		[card.backgroundImage drawAtPoint:drawingTargetPoint];
+		//CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
+		//[card.backgroundImage drawAtPoint:drawingTargetPoint];
+        
+        [card drawCard];
 	}
 	
 }

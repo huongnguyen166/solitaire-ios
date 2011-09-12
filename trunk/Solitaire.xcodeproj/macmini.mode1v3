@@ -274,7 +274,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>11</integer>
+									<integer>9</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Deck.m</string>
+								<string>Card.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Deck.m</string>
+										<string>Card.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9A76BEED141E271A006BE321</string>
+										<string>9A76BF26141E2B91006BE321</string>
 										<key>history</key>
 										<array>
 											<string>9A821B1114188EB20037F2AB</string>
@@ -338,7 +338,6 @@
 											<string>9A7A244A1419DAE80017AA52</string>
 											<string>9A7A244B1419DAE80017AA52</string>
 											<string>9A7A244C1419DAE80017AA52</string>
-											<string>9A7A244E1419DAE80017AA52</string>
 											<string>9A7A24521419DAE80017AA52</string>
 											<string>9A7817F7141B3F3D00FA36D9</string>
 											<string>9A781800141B3F3D00FA36D9</string>
@@ -346,11 +345,12 @@
 											<string>9A76BEBF141E2547006BE321</string>
 											<string>9A76BEC0141E2547006BE321</string>
 											<string>9A76BEC1141E2547006BE321</string>
-											<string>9A76BEC5141E2547006BE321</string>
-											<string>9A76BEE0141E269A006BE321</string>
-											<string>9A76BEE1141E269A006BE321</string>
-											<string>9A76BEE2141E269A006BE321</string>
-											<string>9A76BEE3141E269A006BE321</string>
+											<string>9A76BEF7141E28A7006BE321</string>
+											<string>9A76BF03141E29FB006BE321</string>
+											<string>9A76BF0C141E2B14006BE321</string>
+											<string>9A76BF0E141E2B14006BE321</string>
+											<string>9A76BF1E141E2B79006BE321</string>
+											<string>9A76BF1F141E2B79006BE321</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
