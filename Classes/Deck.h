@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 
+
 @interface Deck : NSObject {
 
     NSMutableArray* _cardArray;
@@ -15,6 +16,8 @@
 
 
 }
+
+
 
 - (id)initWithData:(int)x:(int)y:(int)dId;
 - (void)addCard:(Card*)card;

@@ -76,7 +76,7 @@
     _ownerDeck = deck;
 }
 
--(void)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck
+-(BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck
 {
     if (fromDeck != toDeck)
     {
@@ -86,8 +86,9 @@
     
     // Remove from old deck
     [fromDeck removeCard:self];
-        
+        return TRUE;
     }
+    return FALSE;
 }
 
 

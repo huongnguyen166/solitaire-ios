@@ -48,7 +48,15 @@
 - (void)addCard:(Card*)card
 {
     // Set card new position
-    [card setPos:self.deckRect.origin.x:self.deckRect.origin.y];
+    CGPoint pos;
+    pos.x = self.deckRect.origin.x;
+    pos.y = self.deckRect.origin.y + (15 * [self.cardArray count]-1);
+    [card setPos:pos.x:pos.y];
+    
+    // Make deck rect larger
+    CGRect rec = [self deckRect];
+    rec.size = CGSizeMake(rec.size.width, rec.size.height + 15);
+    [self setDeckRect:rec];
     
     // Set deck info to card
     [card setDeck:self];
@@ -59,7 +67,6 @@
 
 - (void)removeCard:(Card*)card
 {
-    // TODO: test
     [self.cardArray removeObject:card];
 }
 
@@ -69,7 +76,6 @@
 {
     for(int i = 0 ; i < [self.cardArray count] ; i++)
 	{
-		// TODO: NSMutabelArray returns autoreleased class?
         Card* card = [self.cardArray objectAtIndex:i];
 		CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
 		[card.backgroundImage drawAtPoint:drawingTargetPoint];
@@ -83,7 +89,6 @@
     Card* activeCard = nil;
     for(int i = 0 ; i < [self.cardArray count] ; i++)
     {
-        // TODO: NSMutabelArray returns autoreleased class?
         Card* card = [self.cardArray objectAtIndex:i];
         if (CGRectContainsPoint(card.cardRect,point))
         {

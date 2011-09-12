@@ -28,7 +28,7 @@
 - (void)storeCurrentPos;
 - (void)cancelMove;
 - (void)setDeck:(Deck*)deck;
-- (void)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck;
+- (BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck;
 
 @property (nonatomic, retain) UIImage* backgroundImage;
 @property CGRect cardRect;

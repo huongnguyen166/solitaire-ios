@@ -126,6 +126,18 @@
 			9A76BE1C141E1415006BE321 /* PBXTextBookmark */ = 9A76BE1C141E1415006BE321 /* PBXTextBookmark */;
 			9A76BE33141E166D006BE321 /* XCBuildMessageTextBookmark */ = 9A76BE33141E166D006BE321 /* XCBuildMessageTextBookmark */;
 			9A76BE34141E166D006BE321 /* PBXTextBookmark */ = 9A76BE34141E166D006BE321 /* PBXTextBookmark */;
+			9A76BEB3141E2545006BE321 /* PBXTextBookmark */ = 9A76BEB3141E2545006BE321 /* PBXTextBookmark */;
+			9A76BEB4141E2545006BE321 /* XCBuildMessageTextBookmark */ = 9A76BEB4141E2545006BE321 /* XCBuildMessageTextBookmark */;
+			9A76BEB5141E2545006BE321 /* PBXTextBookmark */ = 9A76BEB5141E2545006BE321 /* PBXTextBookmark */;
+			9A76BEBF141E2547006BE321 /* PBXTextBookmark */ = 9A76BEBF141E2547006BE321 /* PBXTextBookmark */;
+			9A76BEC0141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC0141E2547006BE321 /* PBXTextBookmark */;
+			9A76BEC1141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC1141E2547006BE321 /* PBXTextBookmark */;
+			9A76BEC2141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC2141E2547006BE321 /* PBXTextBookmark */;
+			9A76BEC3141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC3141E2547006BE321 /* PBXTextBookmark */;
+			9A76BEC4141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC4141E2547006BE321 /* PBXTextBookmark */;
+			9A76BEC5141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC5141E2547006BE321 /* PBXTextBookmark */;
+			9A76BEC6141E2547006BE321 /* XCBuildMessageTextBookmark */ = 9A76BEC6141E2547006BE321 /* XCBuildMessageTextBookmark */;
+			9A76BEC7141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC7141E2547006BE321 /* PBXTextBookmark */;
 			9A7817F7141B3F3D00FA36D9 = 9A7817F7141B3F3D00FA36D9 /* PBXTextBookmark */;
 			9A781800141B3F3D00FA36D9 = 9A781800141B3F3D00FA36D9 /* PBXBookmark */;
 			9A7834F9141D4E03002F4BFC = 9A7834F9141D4E03002F4BFC /* PlistBookmark */;
@@ -174,7 +186,7 @@
 		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 19;
+		rLoc = 22;
 		rType = 1;
 	};
 	9A76BE34141E166D006BE321 /* PBXTextBookmark */ = {
@@ -182,24 +194,142 @@
 		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
 		name = "Deck.h: 20";
 		rLen = 0;
-		rLoc = 255;
+		rLoc = 258;
 		rType = 0;
 		vrLen = 295;
 		vrLoc = 209;
 	};
+	9A76BEB3141E2545006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
+		name = "Deck.h: 23";
+		rLen = 0;
+		rLoc = 258;
+		rType = 0;
+		vrLen = 293;
+		vrLoc = 214;
+	};
+	9A76BEB4141E2545006BE321 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'retur' undeclared (first use in this function)";
+		fRef = 9A7A23AA1419CA440017AA52 /* Card.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 88;
+		rType = 1;
+	};
+	9A76BEB5141E2545006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A7A23AA1419CA440017AA52 /* Card.m */;
+		name = "Card.m: 89";
+		rLen = 0;
+		rLoc = 1614;
+		rType = 0;
+		vrLen = 316;
+		vrLoc = 1339;
+	};
+	9A76BEBF141E2547006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A7817F9141B3F3D00FA36D9 /* NSArray.h */;
+		name = "NSArray.h: 112";
+		rLen = 36;
+		rLoc = 4998;
+		rType = 0;
+		vrLen = 981;
+		vrLoc = 0;
+	};
+	9A76BEC0141E2547006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A7D9C40141531B600571B44 /* MainView.h */;
+		name = "MainView.h: 26";
+		rLen = 0;
+		rLoc = 543;
+		rType = 0;
+		vrLen = 626;
+		vrLoc = 22;
+	};
+	9A76BEC1141E2547006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A8219A1141883A60037F2AB /* CGGeometry.h */;
+		name = "CGGeometry.h: 30";
+		rLen = 18;
+		rLoc = 445;
+		rType = 0;
+		vrLen = 619;
+		vrLoc = 0;
+	};
+	9A76BEC2141E2547006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
+		name = "Deck.h: 16";
+		rLen = 0;
+		rLoc = 208;
+		rType = 0;
+		vrLen = 507;
+		vrLoc = 0;
+	};
+	9A76BEC3141E2547006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A781722141B224000FA36D9 /* Deck.m */;
+		name = "Deck.m: 59";
+		rLen = 0;
+		rLoc = 1304;
+		rType = 0;
+		vrLen = 899;
+		vrLoc = 1310;
+	};
+	9A76BEC4141E2547006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A7A23A91419CA440017AA52 /* Card.h */;
+		name = "Card.h: 31";
+		rLen = 0;
+		rLoc = 523;
+		rType = 0;
+		vrLen = 817;
+		vrLoc = 57;
+	};
+	9A76BEC5141E2547006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A7D9C41141531B600571B44 /* MainView.m */;
+		name = "MainView.m: 152";
+		rLen = 0;
+		rLoc = 3525;
+		rType = 0;
+		vrLen = 929;
+		vrLoc = 2741;
+	};
+	9A76BEC6141E2547006BE321 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'retur' undeclared (first use in this function)";
+		fRef = 9A7A23AA1419CA440017AA52 /* Card.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 88;
+		rType = 1;
+	};
+	9A76BEC7141E2547006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A7A23AA1419CA440017AA52 /* Card.m */;
+		name = "Card.m: 89";
+		rLen = 0;
+		rLoc = 1600;
+		rType = 0;
+		vrLen = 597;
+		vrLoc = 1051;
+	};
 	9A781721141B224000FA36D9 /* Deck.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 416}}";
-			sepNavSelRange = "{208, 0}";
-			sepNavVisRange = "{0, 498}";
+			sepNavIntBoundsRect = "{{0, 0}, {439, 455}}";
+			sepNavSelRange = "{258, 0}";
+			sepNavVisRange = "{214, 293}";
 			sepNavWindowFrame = "{{38, 162}, {750, 558}}";
 		};
 	};
 	9A781722141B224000FA36D9 /* Deck.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 1391}}";
-			sepNavSelRange = "{1851, 0}";
-			sepNavVisRange = "{1380, 877}";
+			sepNavIntBoundsRect = "{{0, 0}, {755, 1456}}";
+			sepNavSelRange = "{1304, 0}";
+			sepNavVisRange = "{1310, 899}";
 			sepNavWindowFrame = "{{15, 183}, {750, 558}}";
 		};
 	};
@@ -255,7 +385,7 @@
 		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
 		name = "Deck.h: 27";
 		rLen = 57;
-		rLoc = 392;
+		rLoc = 395;
 		rType = 0;
 		vrLen = 460;
 		vrLoc = 44;
@@ -285,7 +415,7 @@
 		fRef = 9A781722141B224000FA36D9 /* Deck.m */;
 		name = "Deck.m: 81";
 		rLen = 13;
-		rLoc = 1913;
+		rLoc = 2031;
 		rType = 0;
 		vrLen = 632;
 		vrLoc = 907;
@@ -295,7 +425,7 @@
 		fRef = 9A7D9C41141531B600571B44 /* MainView.m */;
 		name = "MainView.m: 103";
 		rLen = 15;
-		rLoc = 2719;
+		rLoc = 2720;
 		rType = 0;
 		vrLen = 809;
 		vrLoc = 1931;
@@ -333,16 +463,16 @@
 	9A7A23A91419CA440017AA52 /* Card.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {755, 572}}";
-			sepNavSelRange = "{851, 0}";
-			sepNavVisRange = "{183, 691}";
+			sepNavSelRange = "{523, 0}";
+			sepNavVisRange = "{57, 817}";
 			sepNavWindowFrame = "{{15, 183}, {750, 558}}";
 		};
 	};
 	9A7A23AA1419CA440017AA52 /* Card.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 1170}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 585}";
+			sepNavIntBoundsRect = "{{0, 0}, {755, 1261}}";
+			sepNavSelRange = "{1600, 0}";
+			sepNavVisRange = "{1051, 597}";
 			sepNavWindowFrame = "{{38, 162}, {750, 558}}";
 		};
 	};
@@ -437,7 +567,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -484,9 +614,9 @@
 	};
 	9A7D9C41141531B600571B44 /* MainView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 2145}}";
-			sepNavSelRange = "{3441, 0}";
-			sepNavVisRange = "{2831, 716}";
+			sepNavIntBoundsRect = "{{0, 0}, {755, 2132}}";
+			sepNavSelRange = "{3525, 0}";
+			sepNavVisRange = "{2741, 929}";
 			sepNavWindowFrame = "{{38, 162}, {750, 558}}";
 		};
 	};
@@ -496,6 +626,11 @@
 		name = CGGeometry.h;
 		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h;
 		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {755, 4017}}";
+			sepNavSelRange = "{445, 18}";
+			sepNavVisRange = "{0, 619}";
+		};
 	};
 	9A8219B4141884AB0037F2AB /* UIImage.h */ = {
 		isa = PBXFileReference;
