@@ -22,7 +22,7 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)dealloc;
 
-@property (nonatomic, retain) Card* activeCard;
+//@property (nonatomic, retain) Card* activeCard;
 @property (nonatomic, retain) Deck* sourceDeck;
 
 

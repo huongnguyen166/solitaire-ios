@@ -63,7 +63,7 @@
 {
     for(int i = 0 ; i < [self.cardArray count] ; i++)
 	{
-		// TODO: memory leak?
+		// TODO: NSMutabelArray returns autoreleased class?
         Card* card = [self.cardArray objectAtIndex:i];
 		CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
 		[card.backgroundImage drawAtPoint:drawingTargetPoint];
@@ -77,7 +77,7 @@
     Card* activeCard = nil;
     for(int i = 0 ; i < [self.cardArray count] ; i++)
     {
-        // TODO: memory leak?
+        // TODO: NSMutabelArray returns autoreleased class?
         Card* card = [self.cardArray objectAtIndex:i];
         if (CGRectContainsPoint(card.cardRect,point))
         {
