@@ -23,6 +23,7 @@
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void)dealloc;
 -(Card*)findActiveCard:(CGPoint)point;
+-(Deck*)findActiveDeck:(CGPoint)point;
 
 @property (nonatomic, retain) Deck* sourceDeck;
 @property (nonatomic, retain) Deck* sourceDeck2;

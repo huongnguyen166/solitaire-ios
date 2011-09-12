@@ -50,14 +50,20 @@
     // Set card new position
     [card setPos:self.deckRect.origin.x:self.deckRect.origin.y];
     
+    // Set deck info to card
+    [card setDeck:self];
+    
     // Card ownership is transfered to array
     [self.cardArray addObject:card];    
 }
 
 - (void)removeCard:(Card*)card
 {
-    // TODO:
+    // TODO: test
+    [self.cardArray removeObject:card];
 }
+
+
 
 -(void)drawDeck 
 {
