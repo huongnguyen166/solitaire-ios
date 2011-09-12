@@ -1,310 +1,0 @@
-TSolitaire
-v7
-r0
-t337234406.961368
-cCheck dependencies
-cProcessInfoPlistFile /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Info.plist Solitaire-Info.plist
-cCompileXIB /Users/macmini/Documents/Solitaire-iOS/MainWindow.xib
-cCompileXIB /Users/macmini/Documents/Solitaire-iOS/SolitaireViewController.xib
-cCpResource build/Debug-iphonesimulator/Solitaire.app/Club_ace.png Club_ace.png
-cProcessPCH /var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch.gch Solitaire_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/main.o /Users/macmini/Documents/Solitaire-iOS/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireAppDelegate.o /Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireViewController.o /Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/MainView.o /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire normal i386
-cGenerateDSYMFile /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app.dSYM /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire
-cTouch /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk
-c000000004E62F89A0000000000000110
-t1315109018
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004D54CFFA00000000002999B0
-t1297403898
-s2726320
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004D54CFE5000000000029DA70
-t1297403877
-s2742896
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004D54CFB80000000000001466
-t1297403832
-s5222
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004D5615B40000000000000AA1
-t1297487284
-s2721
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004D5616030000000000766870
-t1297487363
-s7759984
-
-N/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h
-c000000004E685453000000000000028C
-t1315460179
-s652
-i<Foundation/Foundation.h>
-
-N/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m
-c000000004E6856410000000000000785
-t1315460673
-s1925
-i"MainView.h"
-
-N/Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireAppDelegate.h
-c000000004E64F9A000000000000001E8
-t1315240352
-s488
-i<UIKit/UIKit.h>
-
-N/Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireAppDelegate.m
-c000000004E64F9A00000000000000AB1
-t1315240352
-s2737
-i"SolitaireAppDelegate.h"
-i"SolitaireViewController.h"
-
-N/Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireViewController.h
-c000000004E64F9A000000000000000F1
-t1315240352
-s241
-i<UIKit/UIKit.h>
-
-N/Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireViewController.m
-c000000004E64F9A000000000000005C6
-t1315240352
-s1478
-i"SolitaireViewController.h"
-
-N/Users/macmini/Documents/Solitaire-iOS/Club_ace.png
-c000000004E6845E3000000000000142B
-t1315456483
-s5163
-
-N/Users/macmini/Documents/Solitaire-iOS/MainWindow.xib
-c000000004E64F9A00000000000004E41
-t1315240352
-s20033
-
-N/Users/macmini/Documents/Solitaire-iOS/SolitaireViewController.xib
-c000000004E65A38E0000000000003CD6
-t1315283854
-s15574
-
-N/Users/macmini/Documents/Solitaire-iOS/Solitaire_Prefix.pch
-c000000004E64F9A000000000000000BB
-t1315240352
-s187
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app
-t1315541606
-s272
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app.dSYM
-t1315541606
-s102
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Club_ace.png
-t1315541605
-s5163
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Info.plist
-t1315541600
-s599
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/MainWindow.nib
-t1315541605
-s1685
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/PkgInfo
-t1315541600
-s8
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire
-t1315541606
-s20048
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/SolitaireViewController.nib
-t1315541605
-s1342
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/MainView.o
-t1315541606
-s49256
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/Solitaire.LinkFileList
-c000000004E699260000000000000021F
-t1315541600
-s543
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireAppDelegate.o
-t1315541606
-s51428
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireViewController.o
-t1315541606
-s37988
-
-N/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/main.o
-t1315541606
-s6312
-
-N/Users/macmini/Documents/Solitaire-iOS/main.m
-c000000004E64F9A00000000000000168
-t1315240352
-s360
-i<UIKit/UIKit.h>
-
-N/var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch.gch
-t1315541606
-s15814064
-
-NSolitaire-Info.plist
-c000000004E64F9A0000000000000038D
-t1315240352
-s909
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies337234400#337234400#0(0"0(0#1#0"3343187568374212096#0"0#
-
-CCompileC build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/MainView.o /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s337234406.493893
-e337234406.602477
-r1
-xCompileC
-xbuild/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/MainView.o
-x/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-oIn file included from /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m:9:
-o/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h:31: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed
-o/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h:31: warning: assign attribute (default) not appropriate for non-gc object property 'backgroundImage'
-o/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m: In function '-[MainView drawRect:]':
-o/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m:32: warning: unused variable 'context'
-lSLF07#2@65"Compile /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m337234406#337234406#0(584"In file included from /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m:9:/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h:31: warning: no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h:31: warning: assign attribute (default) not appropriate for non-gc object property 'backgroundImage'/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m: In function '-[MainView drawRect:]':/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m:32: warning: unused variable 'context'3(22@77"No 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed337234406#83#149#2(7@79"In file included from /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m337234406#18446744073709551615#0#0(6@57"/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m337153473#9#0#9#0#0"0(13@138"No 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed in /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h337234406#18446744073709551615#0#0(6@57"/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h337152979#31#0#31#0#0"0(6@57"/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h337152979#31#0#31#0#0"0(22@87"Assign attribute (default) not appropriate for non-gc object property 'backgroundImage'337234406#232#159#2(7@79"In file included from /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m337234406#18446744073709551615#0#0(6@57"/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m337153473#9#0#9#0#0"0(13@148"Assign attribute (default) not appropriate for non-gc object property 'backgroundImage' in /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h337234406#18446744073709551615#0#0(6@57"/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h337152979#31#0#31#0#0"0(6@57"/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.h337152979#31#0#31#0#0"0(22@25"Unused variable 'context'337234406#487#97#0(6@57"/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m337153473#32#0#32#0#19"unused variable '*'0(0#0#57"/Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m8600542848#1970"    cd /Users/macmini/Documents/Solitaire-iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-generated-files.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-own-target-headers.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-all-target-headers.hmap -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-project-headers.hmap -F/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator -I/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/include -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources/i386 -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources -include /var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch -c /Users/macmini/Documents/Solitaire-iOS/Classes/MainView.m -o /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/MainView.o0#
-
-CCompileC build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireAppDelegate.o /Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s337234406.290222
-e337234406.493766
-r1
-xCompileC
-xbuild/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireAppDelegate.o
-x/Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@77"Compile /Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireAppDelegate.m337234406#337234406#0(0"0(0#0#69"/Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireAppDelegate.m8602378720#1994"    cd /Users/macmini/Documents/Solitaire-iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-generated-files.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-own-target-headers.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-all-target-headers.hmap -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-project-headers.hmap -F/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator -I/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/include -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources/i386 -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources -include /var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch -c /Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireAppDelegate.m -o /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireAppDelegate.o0#
-
-CCompileC build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireViewController.o /Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s337234406.444662
-e337234406.528435
-r1
-xCompileC
-xbuild/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireViewController.o
-x/Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@80"Compile /Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireViewController.m337234406#337234406#0(0"0(0#0#72"/Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireViewController.m8600887328#2000"    cd /Users/macmini/Documents/Solitaire-iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-generated-files.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-own-target-headers.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-all-target-headers.hmap -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-project-headers.hmap -F/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator -I/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/include -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources/i386 -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources -include /var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch -c /Users/macmini/Documents/Solitaire-iOS/Classes/SolitaireViewController.m -o /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/SolitaireViewController.o0#
-
-CCompileC build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/main.o /Users/macmini/Documents/Solitaire-iOS/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s337234406.289098
-e337234406.444538
-r1
-xCompileC
-xbuild/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/main.o
-x/Users/macmini/Documents/Solitaire-iOS/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@53"Compile /Users/macmini/Documents/Solitaire-iOS/main.m337234406#337234406#0(0"0(0#0#45"/Users/macmini/Documents/Solitaire-iOS/main.m8603951840#1954"    cd /Users/macmini/Documents/Solitaire-iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-generated-files.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-own-target-headers.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-all-target-headers.hmap -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-project-headers.hmap -F/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator -I/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/include -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources/i386 -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources -include /var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch -c /Users/macmini/Documents/Solitaire-iOS/main.m -o /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/macmini/Documents/Solitaire-iOS/MainWindow.xib
-s337234400.836670
-e337234405.137285
-r1
-xCompileXIB
-x/Users/macmini/Documents/Solitaire-iOS/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib337234400#337234405#0(0"0(0#0#53"/Users/macmini/Documents/Solitaire-iOS/MainWindow.xib8602068640#572"    cd /Users/macmini/Documents/Solitaire-iOS    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/MainWindow.nib /Users/macmini/Documents/Solitaire-iOS/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
-
-CCompileXIB /Users/macmini/Documents/Solitaire-iOS/SolitaireViewController.xib
-s337234400.838348
-e337234405.137564
-r1
-xCompileXIB
-x/Users/macmini/Documents/Solitaire-iOS/SolitaireViewController.xib
-lSLF07#2@38"CompileXIB SolitaireViewController.xib337234400#337234405#0(0"0(0#0#66"/Users/macmini/Documents/Solitaire-iOS/SolitaireViewController.xib8602366624#598"    cd /Users/macmini/Documents/Solitaire-iOS    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.3    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/SolitaireViewController.nib /Users/macmini/Documents/Solitaire-iOS/SolitaireViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk0#
-
-CCpResource build/Debug-iphonesimulator/Solitaire.app/Club_ace.png Club_ace.png
-s337234405.137714
-e337234405.157261
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/Solitaire.app/Club_ace.png
-xClub_ace.png
-lSLF07#2@17"Copy Club_ace.png337234405#337234405#0(0"0(0#0#51"/Users/macmini/Documents/Solitaire-iOS/Club_ace.png8602189888#472"    cd /Users/macmini/Documents/Solitaire-iOS    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Users/macmini/Documents/Solitaire-iOS/Club_ace.png /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app0#
-
-CGenerateDSYMFile /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app.dSYM /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire
-s337234406.867457
-e337234406.932001
-r1
-xGenerateDSYMFile
-x/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app.dSYM
-x/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire
-lSLF07#2@115"GenerateDSYMFile build/Debug-iphonesimulator/Solitaire.app.dSYM build/Debug-iphonesimulator/Solitaire.app/Solitaire337234406#337234406#0(0"0(0#0#90"/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire8601962176#389"    cd /Users/macmini/Documents/Solitaire-iOS    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire -o /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app.dSYM0#
-
-CLd /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire normal i386
-s337234406.602582
-e337234406.867258
-r1
-xLd
-x/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire
-xnormal
-xi386
-lSLF07#2@95"Link /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire337234406#337234406#0(0"0(0#0#0"8599063328#910"    cd /Users/macmini/Documents/Solitaire-iOS    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -L/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator -F/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator -filelist /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Objects-normal/i386/Solitaire.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Solitaire0#
-
-CProcessInfoPlistFile /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Info.plist Solitaire-Info.plist
-s337234400.779633
-e337234400.836560
-r1
-xProcessInfoPlistFile
-x/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Info.plist
-xSolitaire-Info.plist
-lSLF07#2@28"Process Solitaire-Info.plist337234400#337234400#0(0"0(0#0#59"/Users/macmini/Documents/Solitaire-iOS/Solitaire-Info.plist31244169098821736#485"    cd /Users/macmini/Documents/Solitaire-iOS    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Solitaire-Info.plist -genpkginfo /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app/Info.plist0#
-
-CProcessPCH /var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch.gch Solitaire_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s337234405.157576
-e337234406.288987
-r1
-xProcessPCH
-x/var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch.gch
-xSolitaire_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@31"Precompile Solitaire_Prefix.pch337234405#337234406#0(0"0(0#0#59"/Users/macmini/Documents/Solitaire-iOS/Solitaire_Prefix.pch8601896288#1844"    cd /Users/macmini/Documents/Solitaire-iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40300 -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-generated-files.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-own-target-headers.hmap -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-all-target-headers.hmap -iquote /Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/Solitaire-project-headers.hmap -F/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator -I/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/include -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources/i386 -I/Users/macmini/Documents/Solitaire-iOS/build/Solitaire.build/Debug-iphonesimulator/Solitaire.build/DerivedSources -c /Users/macmini/Documents/Solitaire-iOS/Solitaire_Prefix.pch -o /var/folders/mg/mgnZ6m0mF4C3GWruKYwqNU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Solitaire_Prefix-bnkfelsxvshumhgikgyuraqqaufl/Solitaire_Prefix.pch.gch0#
-
-CTouch /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app
-s337234406.932106
-e337234406.961306
-r1
-xTouch
-x/Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app
-lSLF07#2@86"Touch /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app337234406#337234406#0(0"0(0#0#0"8601514560#280"    cd /Users/macmini/Documents/Solitaire-iOS    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/macmini/Documents/Solitaire-iOS/build/Debug-iphonesimulator/Solitaire.app0#
-
