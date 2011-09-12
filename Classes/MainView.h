@@ -14,16 +14,17 @@
 	
 	Card* _activeCard;    
     Deck* _sourceDeck;
+    Deck* _sourceDeck2;
 	
 }
 
 -(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event;
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)dealloc;
+-(void)dealloc;
+-(Card*)findActiveCard:(CGPoint)point;
 
-//@property (nonatomic, retain) Card* activeCard;
 @property (nonatomic, retain) Deck* sourceDeck;
-
+@property (nonatomic, retain) Deck* sourceDeck2;
 
 @end
