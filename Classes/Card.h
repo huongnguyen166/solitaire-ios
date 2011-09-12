@@ -22,7 +22,8 @@
 	
 }
 
-- (id)initWithData:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)cLand:(int)z;
+- (id)initWithData:(NSString*)cardName:
+(int)x:(int)y:(int)cId:(int)cLand:(int)z:(int)width:(int)height;
 - (void)setPos:(int)x:(int)y;
 - (void)dealloc;
 - (void)storeCurrentPos;
