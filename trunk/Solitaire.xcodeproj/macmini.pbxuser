@@ -138,6 +138,12 @@
 			9A76BEC5141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC5141E2547006BE321 /* PBXTextBookmark */;
 			9A76BEC6141E2547006BE321 /* XCBuildMessageTextBookmark */ = 9A76BEC6141E2547006BE321 /* XCBuildMessageTextBookmark */;
 			9A76BEC7141E2547006BE321 /* PBXTextBookmark */ = 9A76BEC7141E2547006BE321 /* PBXTextBookmark */;
+			9A76BEE0141E269A006BE321 /* PBXTextBookmark */ = 9A76BEE0141E269A006BE321 /* PBXTextBookmark */;
+			9A76BEE1141E269A006BE321 /* PBXTextBookmark */ = 9A76BEE1141E269A006BE321 /* PBXTextBookmark */;
+			9A76BEE2141E269A006BE321 /* PBXTextBookmark */ = 9A76BEE2141E269A006BE321 /* PBXTextBookmark */;
+			9A76BEE3141E269A006BE321 /* PBXTextBookmark */ = 9A76BEE3141E269A006BE321 /* PBXTextBookmark */;
+			9A76BEE4141E269A006BE321 /* PBXTextBookmark */ = 9A76BEE4141E269A006BE321 /* PBXTextBookmark */;
+			9A76BEED141E271A006BE321 /* PBXTextBookmark */ = 9A76BEED141E271A006BE321 /* PBXTextBookmark */;
 			9A7817F7141B3F3D00FA36D9 = 9A7817F7141B3F3D00FA36D9 /* PBXTextBookmark */;
 			9A781800141B3F3D00FA36D9 = 9A781800141B3F3D00FA36D9 /* PBXBookmark */;
 			9A7834F9141D4E03002F4BFC = 9A7834F9141D4E03002F4BFC /* PlistBookmark */;
@@ -186,7 +192,7 @@
 		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 22;
+		rLoc = 23;
 		rType = 1;
 	};
 	9A76BE34141E166D006BE321 /* PBXTextBookmark */ = {
@@ -194,7 +200,7 @@
 		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
 		name = "Deck.h: 20";
 		rLen = 0;
-		rLoc = 258;
+		rLoc = 274;
 		rType = 0;
 		vrLen = 295;
 		vrLoc = 209;
@@ -204,7 +210,7 @@
 		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
 		name = "Deck.h: 23";
 		rLen = 0;
-		rLoc = 258;
+		rLoc = 274;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 214;
@@ -263,7 +269,7 @@
 		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
 		name = "Deck.h: 16";
 		rLen = 0;
-		rLoc = 208;
+		rLoc = 224;
 		rType = 0;
 		vrLen = 507;
 		vrLoc = 0;
@@ -273,7 +279,7 @@
 		fRef = 9A781722141B224000FA36D9 /* Deck.m */;
 		name = "Deck.m: 59";
 		rLen = 0;
-		rLoc = 1304;
+		rLoc = 1365;
 		rType = 0;
 		vrLen = 899;
 		vrLoc = 1310;
@@ -317,19 +323,79 @@
 		vrLen = 597;
 		vrLoc = 1051;
 	};
+	9A76BEE0141E269A006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A7A23AA1419CA440017AA52 /* Card.m */;
+		name = "Card.m: 89";
+		rLen = 0;
+		rLoc = 1600;
+		rType = 0;
+		vrLen = 661;
+		vrLoc = 539;
+	};
+	9A76BEE1141E269A006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
+		name = "Deck.h: 34";
+		rLen = 0;
+		rLoc = 537;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 0;
+	};
+	9A76BEE2141E269A006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A7A23A91419CA440017AA52 /* Card.h */;
+		name = "Card.h: 31";
+		rLen = 0;
+		rLoc = 523;
+		rType = 0;
+		vrLen = 818;
+		vrLoc = 56;
+	};
+	9A76BEE3141E269A006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A781722141B224000FA36D9 /* Deck.m */;
+		name = "Deck.m: 67";
+		rLen = 0;
+		rLoc = 1507;
+		rType = 0;
+		vrLen = 785;
+		vrLoc = 844;
+	};
+	9A76BEE4141E269A006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A781722141B224000FA36D9 /* Deck.m */;
+		name = "Deck.m: 67";
+		rLen = 0;
+		rLoc = 1462;
+		rType = 0;
+		vrLen = 858;
+		vrLoc = 843;
+	};
+	9A76BEED141E271A006BE321 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 9A781722141B224000FA36D9 /* Deck.m */;
+		name = "Deck.m: 68";
+		rLen = 0;
+		rLoc = 1494;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 968;
+	};
 	9A781721141B224000FA36D9 /* Deck.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {439, 455}}";
-			sepNavSelRange = "{258, 0}";
-			sepNavVisRange = "{214, 293}";
+			sepNavIntBoundsRect = "{{0, 0}, {755, 483}}";
+			sepNavSelRange = "{537, 0}";
+			sepNavVisRange = "{0, 544}";
 			sepNavWindowFrame = "{{38, 162}, {750, 558}}";
 		};
 	};
 	9A781722141B224000FA36D9 /* Deck.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {755, 1456}}";
-			sepNavSelRange = "{1304, 0}";
-			sepNavVisRange = "{1310, 899}";
+			sepNavIntBoundsRect = "{{0, 0}, {755, 1560}}";
+			sepNavSelRange = "{1494, 0}";
+			sepNavVisRange = "{968, 810}";
 			sepNavWindowFrame = "{{15, 183}, {750, 558}}";
 		};
 	};
@@ -385,7 +451,7 @@
 		fRef = 9A781721141B224000FA36D9 /* Deck.h */;
 		name = "Deck.h: 27";
 		rLen = 57;
-		rLoc = 395;
+		rLoc = 411;
 		rType = 0;
 		vrLen = 460;
 		vrLoc = 44;
@@ -415,7 +481,7 @@
 		fRef = 9A781722141B224000FA36D9 /* Deck.m */;
 		name = "Deck.m: 81";
 		rLen = 13;
-		rLoc = 2031;
+		rLoc = 2197;
 		rType = 0;
 		vrLen = 632;
 		vrLoc = 907;
@@ -464,7 +530,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {755, 572}}";
 			sepNavSelRange = "{523, 0}";
-			sepNavVisRange = "{57, 817}";
+			sepNavVisRange = "{56, 818}";
 			sepNavWindowFrame = "{{15, 183}, {750, 558}}";
 		};
 	};
@@ -472,7 +538,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {755, 1261}}";
 			sepNavSelRange = "{1600, 0}";
-			sepNavVisRange = "{1051, 597}";
+			sepNavVisRange = "{539, 661}";
 			sepNavWindowFrame = "{{38, 162}, {750, 558}}";
 		};
 	};

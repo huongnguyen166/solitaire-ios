@@ -10,6 +10,7 @@
 @synthesize cardArray = _cardArray;
 @synthesize deckId = _deckId;
 @synthesize deckRect = _deckRect;
+@synthesize deckZ = _deckZ;
 
 
 - (id)initWithData:(int)x:(int)y:(int)dId
@@ -21,6 +22,8 @@
         // Create card array for the deck
         self.cardArray = [[NSMutableArray alloc] init];
 
+        self.deckZ = 0;
+        
         // Set deck size and position
         UIImage* backgroundImage = [UIImage imageNamed:@"Club_ace.png"];
         CGRect rect;
@@ -60,6 +63,10 @@
     
     // Set deck info to card
     [card setDeck:self];
+    
+    // Set deck internal z order
+    [self setDeckZ:self.deckZ+1];
+    [card setZOrder:self.deckZ];
     
     // Card ownership is transfered to array
     [self.cardArray addObject:card];    

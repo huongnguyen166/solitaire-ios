@@ -13,6 +13,7 @@
     NSMutableArray* _cardArray;
     int _deckId;
 	CGRect _deckRect;
+    int _deckZ;
 
 
 }
@@ -30,5 +31,6 @@
 @property (nonatomic, retain) NSMutableArray* cardArray;
 @property int deckId;
 @property CGRect deckRect;
+@property int deckZ;
 
 @end
