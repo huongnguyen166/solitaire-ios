@@ -10,14 +10,15 @@
 @implementation MainView
 
 @synthesize sourceDeck = _sourceDeck;
-//@synthesize activeCard = _activeCard;
+@synthesize sourceDeck2 = _sourceDeck2;
 
 -(id) initWithCoder:(NSCoder*)sourceCoder
 {
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
+        // Source decks
         self.sourceDeck = [Deck alloc];
-        [self.sourceDeck initWithData:50:50:1];
+        [self.sourceDeck initWithData:50:100:1];
 		for (int i=0;i<3;i++)
 		{
 			Card* card = [Card alloc];
@@ -26,6 +27,18 @@
             [card release];
             card = nil;
 		}
+        
+        self.sourceDeck2 = [Deck alloc];
+        [self.sourceDeck2 initWithData:150:100:2];
+		for (int i=0;i<3;i++)
+		{
+			Card* card = [Card alloc];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i];
+            [self.sourceDeck2 addCard:card];
+            [card release];
+            card = nil;
+		}
+        
 	}
 	return self;
 }
@@ -33,10 +46,10 @@
 - (void)dealloc {
 	[_sourceDeck release];
     _sourceDeck = nil;
-    
-    //[_activeCard release];
-    //_activeCard = nil;
-    
+        
+	[_sourceDeck2 release];
+    _sourceDeck2 = nil;
+
 	// Remember to call base class dealloc
     [super dealloc];
 }
@@ -51,6 +64,7 @@
 	
     // Draw decks
     [self.sourceDeck drawDeck];
+    [self.sourceDeck2 drawDeck];
 	
     // Draw active card on top of all others
 	if (_activeCard)
@@ -63,13 +77,24 @@
 	
 }
 
+-(Card*)findActiveCard:(CGPoint)point
+{
+    // TODO: make better
+    Card* card = nil;
+    card = [self.sourceDeck getCardAtPos:point];
+    if (!card) {
+        card = [self.sourceDeck2 getCardAtPos:point];
+    }
+    return card;
+}
 
--(void) touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
+-(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
 {
     UITouch* touchPoint = [touches anyObject]; 
     CGPoint point = [touchPoint locationInView:self];   
 	
-    _activeCard = [self.sourceDeck getCardAtPos:point];
+    _activeCard = [self findActiveCard:point];
+    //_activeCard = [self.sourceDeck getCardAtPos:point];
     if (_activeCard)
     {
         xCap = point.x - _activeCard.cardRect.origin.x;
