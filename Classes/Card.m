@@ -68,21 +68,26 @@
 
 - (void)drawCard
 {
-    if(self.turned)
+    if(self.turned){ 
         [self.foregroundImage drawInRect:self.cardRect];
-    else
+        [self.cardParent drawCard];
+    }
+    else {
         [self.backgroundImage drawInRect:self.cardRect];
+    }
     
 }
 
 - (void)storeCurrentPos
 {
     self.oldPoint = self.cardRect.origin;
+    [self.cardParent storeCurrentPos];
 }
 
 - (void)cancelMove
 {
     [self setPos:self.oldPoint.x:self.oldPoint.y];
+    [self.cardParent cancelMove];
 }
 
 - (void)setPos:(int)x:(int)y
@@ -93,11 +98,15 @@
 	point.y = y;
     newRect.origin = point;
 	self.cardRect = newRect;
+    
+    [self.cardParent setPos:x:y+15];
 }
 
 -(void)setDeck:(Deck*)deck
 {
     _ownerDeck = deck;
+    [self.cardParent setDeck:deck];
+
 }
 
 -(BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck
@@ -113,6 +122,8 @@
         Card* fromLast = [fromDeck.cardArray lastObject];
         [fromLast setCardParent:nil];
         //[fromLast setTurned:true];
+        
+        [self.cardParent changeDeckTo:fromDeck:toDeck];
         
         return TRUE;
         }
