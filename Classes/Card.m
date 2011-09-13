@@ -18,6 +18,7 @@
 @synthesize oldPoint = _oldPoint;
 @synthesize ownerDeck = _ownerDeck;
 @synthesize cardType = _cardType;
+@synthesize black = _black;
 
 
 
