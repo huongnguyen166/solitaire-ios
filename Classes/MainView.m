@@ -444,7 +444,10 @@
         // Change car deck to another
         Deck* toDeck = [self findActiveDeck:point];
         if (toDeck) {
+            //Card* onTopOfCard = [toDeck getTopCard];
+            
             // TODO: add game logic
+            // From deck to new deck
             BOOL ret = [_activeCard changeDeckTo:_activeCard.ownerDeck:toDeck];
             if (!ret) 
                [_activeCard cancelMove]; 
