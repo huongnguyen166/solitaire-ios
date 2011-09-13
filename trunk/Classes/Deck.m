@@ -11,9 +11,10 @@
 @synthesize deckId = _deckId;
 @synthesize deckRect = _deckRect;
 @synthesize deckZ = _deckZ;
+@synthesize deckType = _deckType;
 
 
-- (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height
+- (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height:(DeckType)type
 {
 	self = [super init];
     
@@ -21,7 +22,7 @@
     {
         // Create card array for the deck
         self.cardArray = [[NSMutableArray alloc] init];
-
+        self.deckType = type;
         self.deckZ = 0;
         
         // Set deck size and position
@@ -55,7 +56,12 @@
     // Set card new position
     CGPoint pos;
     pos.x = self.deckRect.origin.x;
-    pos.y = self.deckRect.origin.y + (15 * [self.cardArray count]-1);
+    if (self.deckType == ESource)
+        pos.y = self.deckRect.origin.y + (15 * [self.cardArray count]-1);
+    else {
+        pos.y = self.deckRect.origin.y;
+    }
+
     [card setPos:pos.x:pos.y];
     
     // Make deck rect larger
