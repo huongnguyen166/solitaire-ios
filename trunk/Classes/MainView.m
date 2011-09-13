@@ -10,6 +10,7 @@
 @implementation MainView
 @synthesize sourceDeckArray = _sourceDeckArray;
 @synthesize targetDeckArray = _targetDeckArray;
+@synthesize cardsArray = _cardsArray;
 @synthesize wasteDeck1 = _wasteDeck1;
 @synthesize wasteDeck2 = _wasteDeck2;
 
@@ -25,6 +26,11 @@
         int cardHeight = cardWidth * 1.7;
         int cap = (screenWidth - cardWidth*7) / 8;
         
+        
+        // Create cards
+        self.cardsArray =  [[NSMutableArray alloc] init];
+        [self createCards:cardWidth:cardHeight];
+        
         // Array for the source decks
         self.sourceDeckArray = [[NSMutableArray alloc] init];
         
@@ -33,8 +39,7 @@
         [sourceDeck initWithData:cap:cardHeight*2:1:cardWidth:cardHeight:ESource];
 		for (int i=0;i<=1;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [sourceDeck addCard:card];
             [card release];
             card = nil;
@@ -48,8 +53,7 @@
         [sourceDeck initWithData:cap*2+cardWidth:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<=2;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [sourceDeck addCard:card];
             [card release];
             card = nil;
@@ -63,8 +67,7 @@
         [sourceDeck initWithData:cap*3+cardWidth*2:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<=3;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [sourceDeck addCard:card];
             [card release];
             card = nil;
@@ -78,8 +81,7 @@
         [sourceDeck initWithData:cap*4+cardWidth*3:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<=4;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [sourceDeck addCard:card];
             [card release];
             card = nil;
@@ -93,8 +95,7 @@
         [sourceDeck initWithData:cap*5+cardWidth*4:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<=5;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [sourceDeck addCard:card];
             [card release];
             card = nil;
@@ -108,8 +109,7 @@
         [sourceDeck initWithData:cap*6+cardWidth*5:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<=6;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [sourceDeck addCard:card];
             [card release];
             card = nil;
@@ -123,8 +123,7 @@
         [sourceDeck initWithData:cap*7+cardWidth*6:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<=7;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [sourceDeck addCard:card];
             [card release];
             card = nil;
@@ -144,8 +143,7 @@
         [targetDeck initWithData:cap*4+cardWidth*3:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
 		for (int i=0;i<=1;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [targetDeck addCard:card];
             [card release];
             card = nil;
@@ -154,13 +152,12 @@
         [targetDeck release];
         targetDeck = nil;
 
-        
+ 
         targetDeck = [Deck alloc];
         [targetDeck initWithData:cap*5+cardWidth*4:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
 		for (int i=0;i<=1;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [targetDeck addCard:card];
             [card release];
             card = nil;
@@ -173,8 +170,7 @@
         [targetDeck initWithData:cap*6+cardWidth*5:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
 		for (int i=0;i<=1;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [targetDeck addCard:card];
             [card release];
             card = nil;
@@ -187,8 +183,7 @@
         [targetDeck initWithData:cap*7+cardWidth*6:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
 		for (int i=0;i<=1;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [targetDeck addCard:card];
             [card release];
             card = nil;
@@ -201,10 +196,9 @@
         // Waste decks
         self.wasteDeck1 = [Deck alloc];
         [self.wasteDeck1 initWithData:cap:cardHeight*0.5:2:cardWidth:cardHeight:EWaste1];
-		for (int i=0;i<=10;i++)
+		for (int i=0;i<=5;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [self.wasteDeck1 addCard:card];
             [card release];
             card = nil;
@@ -213,8 +207,7 @@
         [self.wasteDeck2 initWithData:cap*2+cardWidth:cardHeight*0.5:2:cardWidth:cardHeight:EWaste2];
 		for (int i=0;i<=1;i++)
 		{
-			Card* card = [Card alloc];
-            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            Card* card = [self getRandomCard];
             [self.wasteDeck2 addCard:card];
             [card release];
             card = nil;
@@ -236,12 +229,88 @@
     [_wasteDeck2 release];
     _wasteDeck2 = nil;
     
+    [_cardsArray release];
+    _cardsArray = nil;
+    
     _activeCard = nil;
     
 	// Remember to call base class dealloc
     [super dealloc];
 }
 
+
+-(void)createCards:(int)width:(int)height
+{
+    for (int i=1;i<=13;i++) {
+        Card* card = [Card alloc];
+        NSString* name = [[NSString alloc]initWithFormat:@"club%d.png",i];
+        [card initWithData:name:0:0:0:0:i:width:height];
+        [self.cardsArray addObject:card];
+        
+        [card release];
+        card = nil;
+        [name release];
+        name = nil;
+    }
+
+    for (int i=1;i<=13;i++) {
+        Card* card = [Card alloc];
+        NSString* name = [[NSString alloc]initWithFormat:@"diamond%d.png",i];
+        [card initWithData:name:0:0:0:0:i:width:height];
+        [self.cardsArray addObject:card];
+        
+        [card release];
+        card = nil;
+        [name release];
+        name = nil;
+    }
+    
+    for (int i=1;i<=13;i++) {
+        Card* card = [Card alloc];
+        NSString* name = [[NSString alloc]initWithFormat:@"heart%d.png",i];
+        [card initWithData:name:0:0:0:0:i:width:height];
+        [self.cardsArray addObject:card];
+        
+        [card release];
+        card = nil;
+        [name release];
+        name = nil;
+    }
+    
+    for (int i=1;i<=13;i++) {
+        Card* card = [Card alloc];
+        NSString* name = [[NSString alloc]initWithFormat:@"spade%d.png",i];
+        [card initWithData:name:0:0:0:0:i:width:height];
+        [self.cardsArray addObject:card];
+        
+        [card release];
+        card = nil;
+        [name release];
+        name = nil;
+    }
+    
+    
+}
+
+
+-(Card*)getRandomCard
+{
+    Card* ret = nil;
+    
+    int max = ([self.cardsArray count]-1);
+    int r = arc4random() % max;
+    
+    if(r<0)
+        r = 0;
+    
+    //NSLog(@"r = %d, max = %d", r, max);
+    
+    ret = [self.cardsArray objectAtIndex:r];    
+    [ret retain];
+    [self.cardsArray removeObject:ret];
+    
+    return ret;
+}
 
 -(void)drawRect:(CGRect)rect {
     //CGContextRef    context = UIGraphicsGetCurrentContext();
