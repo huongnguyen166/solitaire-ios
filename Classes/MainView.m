@@ -30,7 +30,7 @@
         
         // Source decks
         self.sourceDeck = [Deck alloc];
-        [self.sourceDeck initWithData:cap:cardHeight*2:1:cardWidth:cardHeight];
+        [self.sourceDeck initWithData:cap:cardHeight*2:1:cardWidth:cardHeight:ESource];
 		for (int i=0;i<2;i++)
 		{
 			Card* card = [Card alloc];
@@ -41,7 +41,7 @@
 		}
         
         self.sourceDeck2 = [Deck alloc];
-        [self.sourceDeck2 initWithData:cap*2+cardWidth:cardHeight*2:2:cardWidth:cardHeight];
+        [self.sourceDeck2 initWithData:cap*2+cardWidth:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<3;i++)
 		{
 			Card* card = [Card alloc];
@@ -52,7 +52,7 @@
 		}
 
         self.sourceDeck3 = [Deck alloc];
-        [self.sourceDeck3 initWithData:cap*3+cardWidth*2:cardHeight*2:2:cardWidth:cardHeight];
+        [self.sourceDeck3 initWithData:cap*3+cardWidth*2:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<4;i++)
 		{
 			Card* card = [Card alloc];
@@ -63,7 +63,7 @@
 		}
 
         self.sourceDeck4 = [Deck alloc];
-        [self.sourceDeck4 initWithData:cap*4+cardWidth*3:cardHeight*2:2:cardWidth:cardHeight];
+        [self.sourceDeck4 initWithData:cap*4+cardWidth*3:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<5;i++)
 		{
 			Card* card = [Card alloc];
@@ -74,7 +74,7 @@
 		}
 
         self.sourceDeck5 = [Deck alloc];
-        [self.sourceDeck5 initWithData:cap*5+cardWidth*4:cardHeight*2:2:cardWidth:cardHeight];
+        [self.sourceDeck5 initWithData:cap*5+cardWidth*4:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<6;i++)
 		{
 			Card* card = [Card alloc];
@@ -85,7 +85,7 @@
 		}
 
         self.sourceDeck6 = [Deck alloc];
-        [self.sourceDeck6 initWithData:cap*6+cardWidth*5:cardHeight*2:2:cardWidth:cardHeight];
+        [self.sourceDeck6 initWithData:cap*6+cardWidth*5:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<7;i++)
 		{
 			Card* card = [Card alloc];
@@ -96,7 +96,7 @@
 		}
 
         self.sourceDeck7 = [Deck alloc];
-        [self.sourceDeck7 initWithData:cap*7+cardWidth*6:cardHeight*2:2:cardWidth:cardHeight];
+        [self.sourceDeck7 initWithData:cap*7+cardWidth*6:cardHeight*2:2:cardWidth:cardHeight:ESource];
 		for (int i=0;i<8;i++)
 		{
 			Card* card = [Card alloc];

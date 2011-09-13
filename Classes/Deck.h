@@ -7,6 +7,13 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 
+typedef enum DeckType {
+    ESource,
+    ETarget,
+    EWaste1,
+    WWaste2
+} DeckType;
+
 
 @interface Deck : NSObject {
 
@@ -14,13 +21,14 @@
     int _deckId;
 	CGRect _deckRect;
     int _deckZ;
+    DeckType _deckType;
 
 
 }
 
 
 
-- (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height;
+- (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height:(DeckType)type;
 - (void)addCard:(Card*)card;
 - (void)removeCard:(Card*)card;
 - (void)drawDeck; 
@@ -32,5 +40,6 @@
 @property int deckId;
 @property CGRect deckRect;
 @property int deckZ;
+@property DeckType deckType;
 
 @end
