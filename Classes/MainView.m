@@ -282,8 +282,13 @@
         }
         card = nil;
     }    
- 
-    card = [self.wasteDeck1 getCardAtPos:point];
+
+    if(!card)
+        card = [self.wasteDeck1 getCardAtPos:point];
+    
+    
+    if(!card)
+        card = [self.wasteDeck2 getCardAtPos:point];
     
     return card;
 }
@@ -309,13 +314,6 @@
         }
     }    
     
-    /*
-    if(CGRectContainsPoint(self.wasteDeck1.deckRect,point))
-    {
-        ret = self.wasteDeck1;
-        return ret;
-    }
-    */
     
     return ret;
 }
@@ -326,8 +324,9 @@
     CGPoint point = [touchPoint locationInView:self];   
 	
     _activeCard = [self findActiveCard:point];
-    // Handle source deck touch
-    if (_activeCard && [[_activeCard ownerDeck]deckType] == ESource)
+    // Handle source deck and waste2 touch
+    if (_activeCard && ([[_activeCard ownerDeck]deckType] == ESource ||
+        [[_activeCard ownerDeck]deckType] == EWaste2))
     {
         xCap = point.x - _activeCard.cardRect.origin.x;
         yCap = point.y - _activeCard.cardRect.origin.y;
