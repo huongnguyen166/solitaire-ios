@@ -72,6 +72,13 @@
     [self setDeckZ:self.deckZ+1];
     [card setZOrder:self.deckZ];
     
+    // Parent card
+    if([self.cardArray count]>0 ) {
+        Card* childCard = [self.cardArray lastObject];
+        childCard.cardParent = card;
+    } 
+        
+    
     // Card ownership is transfered to array
     [self.cardArray addObject:card];    
 }

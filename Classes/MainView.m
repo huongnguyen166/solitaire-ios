@@ -406,11 +406,12 @@
     {
         xCap = point.x - _activeCard.cardRect.origin.x;
         yCap = point.y - _activeCard.cardRect.origin.y;
-        
+        [_activeCard setTurned: true];
         [_activeCard storeCurrentPos];
 	}
     // Handle waste1 deck touch
     else if (_activeCard && [[_activeCard ownerDeck]deckType] == EWaste1) {
+        [_activeCard setTurned: true];
         [_activeCard changeDeckTo:_activeCard.ownerDeck:_wasteDeck2];
         _activeCard = nil;
         [self setNeedsDisplay];
