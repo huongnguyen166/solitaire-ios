@@ -17,10 +17,11 @@
 @synthesize zOrder = _zOrder;
 @synthesize oldPoint = _oldPoint;
 @synthesize ownerDeck = _ownerDeck;
+@synthesize cardType = _cardType;
 
 
 
-- (id)initWithData:(NSString*)cardName:
+- (id)initWithData:(CardType)type:(NSString*)cardName:
     (int)x:(int)y:(int)cId:(int)cLand:(int)z:(int)width:(int)height
 {
 	self = [super init];
@@ -30,6 +31,11 @@
     // Load card graphics
 	self.backgroundImage = [UIImage imageNamed:cardName];
 	
+    self.cardType = type;
+    // or for example
+    //[self setCardType:type];
+        
+        
     // Set card position and z order
 	CGPoint point;
 	point.x = x;

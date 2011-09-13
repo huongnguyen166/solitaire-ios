@@ -244,7 +244,7 @@
     for (int i=1;i<=13;i++) {
         Card* card = [Card alloc];
         NSString* name = [[NSString alloc]initWithFormat:@"club%d.png",i];
-        [card initWithData:name:0:0:0:0:i:width:height];
+        [card initWithData:EClub:name:0:0:0:0:i:width:height];
         [self.cardsArray addObject:card];
         
         [card release];
@@ -256,7 +256,7 @@
     for (int i=1;i<=13;i++) {
         Card* card = [Card alloc];
         NSString* name = [[NSString alloc]initWithFormat:@"diamond%d.png",i];
-        [card initWithData:name:0:0:0:0:i:width:height];
+        [card initWithData:EDiamond:name:0:0:0:0:i:width:height];
         [self.cardsArray addObject:card];
         
         [card release];
@@ -268,7 +268,7 @@
     for (int i=1;i<=13;i++) {
         Card* card = [Card alloc];
         NSString* name = [[NSString alloc]initWithFormat:@"heart%d.png",i];
-        [card initWithData:name:0:0:0:0:i:width:height];
+        [card initWithData:EHeart:name:0:0:0:0:i:width:height];
         [self.cardsArray addObject:card];
         
         [card release];
@@ -280,7 +280,7 @@
     for (int i=1;i<=13;i++) {
         Card* card = [Card alloc];
         NSString* name = [[NSString alloc]initWithFormat:@"spade%d.png",i];
-        [card initWithData:name:0:0:0:0:i:width:height];
+        [card initWithData:ESpade:name:0:0:0:0:i:width:height];
         [self.cardsArray addObject:card];
         
         [card release];

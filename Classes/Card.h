@@ -6,6 +6,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum CardType {
+    ESpade,
+    EHeart,
+    EClub,
+    EDiamond
+} CardType;
+
+
 
 @class Deck;
 
@@ -19,10 +27,11 @@
 	int _zOrder;
     CGPoint _oldPoint;
     Deck* _ownerDeck;
+    CardType _cardType;
 	
 }
 
-- (id)initWithData:(NSString*)cardName:
+- (id)initWithData:(CardType)type:(NSString*)cardName:
 (int)x:(int)y:(int)cId:(int)cLand:(int)z:(int)width:(int)height;
 - (void)setPos:(int)x:(int)y;
 - (void)dealloc;
@@ -41,5 +50,6 @@
 @property int zOrder;
 @property CGPoint oldPoint;
 @property (nonatomic, assign) Deck* ownerDeck;
+@property CardType cardType;
 
 @end
