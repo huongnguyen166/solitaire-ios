@@ -7,10 +7,10 @@
 #import <Foundation/Foundation.h>
 
 typedef enum CardType {
-    ESpade,
-    EHeart,
-    EClub,
-    EDiamond
+    ESpade = 1,
+    EHeart = 2,
+    EClub = 3,
+    EDiamond = 4
 } CardType;
 
 
