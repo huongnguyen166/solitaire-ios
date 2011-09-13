@@ -26,19 +26,15 @@
         self.deckZ = 0;
         
         // Set deck size and position
-        //UIImage* backgroundImage = [UIImage imageNamed:@"Club_ace.png"];
         CGRect rect;
         CGPoint point;
         point.x = x;
         point.y = y;
         rect.origin = point;
-        //rect.size = backgroundImage.size;
         rect.size.width = width;
         rect.size.height = height;
         self.deckRect = rect;
         self.deckId = dId;
-        
-        //[backgroundImage release];
     }
     return self;
 }
@@ -91,7 +87,7 @@
 {
     if (self.deckType == ESource) {
         // Draw all cards in ESource decks
-        for(int i = 0 ; i < [self.cardArray count] ; i++)
+        for(int i = 0 ; i <= [self.cardArray count]-1 ; i++)
         {
             Card* card = [self.cardArray objectAtIndex:i];        
             [card drawCard];
@@ -105,7 +101,7 @@
             card = [self.cardArray objectAtIndex:[self.cardArray count]-1];        
             [card drawCard];
         } else {
-            for(int i = 0 ; i < [self.cardArray count] ; i++)
+            for(int i = 0 ; i <= [self.cardArray count]-1 ; i++)
             {
                 Card* card = [self.cardArray objectAtIndex:i];        
                 [card drawCard];
