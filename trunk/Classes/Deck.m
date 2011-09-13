@@ -113,6 +113,13 @@
     }
 }
 
+- (Card*)getTopCard
+{
+    Card* top = nil;
+    top = [self.cardArray lastObject];
+    return top;
+}
+
 
 - (Card*)getCardAtPos:(CGPoint)point
 {

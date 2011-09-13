@@ -101,16 +101,20 @@
 
 -(BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck
 {
-    if (fromDeck != toDeck)
-    {
+    if (fromDeck != toDeck){
+        // Add to new deck
+        [toDeck addCard:self];
     
-    // Add to new deck
-    [toDeck addCard:self];
-    
-    // Remove from old deck
-    [fromDeck removeCard:self];
+        // Remove from old deck
+        [fromDeck removeCard:self];
+        
+        // Clean parent card reference
+        Card* fromLast = [fromDeck.cardArray lastObject];
+        [fromLast setCardParent:nil];
+        //[fromLast setTurned:true];
+        
         return TRUE;
-    }
+        }
     return FALSE;
 }
 

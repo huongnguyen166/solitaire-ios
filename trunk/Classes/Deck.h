@@ -33,6 +33,7 @@ typedef enum DeckType {
 - (void)removeCard:(Card*)card;
 - (void)drawDeck; 
 - (Card*)getCardAtPos:(CGPoint)point;
+- (Card*)getTopCard;
 - (void)dealloc;
 
 
