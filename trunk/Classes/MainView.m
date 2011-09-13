@@ -44,6 +44,7 @@
             [card release];
             card = nil;
 		}
+        [[sourceDeck.cardArray lastObject] setTurned:true];
         [self.sourceDeckArray addObject:sourceDeck];
         [sourceDeck release];
         sourceDeck = nil;
@@ -58,6 +59,7 @@
             [card release];
             card = nil;
 		}
+        [[sourceDeck.cardArray lastObject] setTurned:true];
         [self.sourceDeckArray addObject:sourceDeck];
         [sourceDeck release];
         sourceDeck = nil;
@@ -72,6 +74,7 @@
             [card release];
             card = nil;
 		}
+        [[sourceDeck.cardArray lastObject] setTurned:true];
         [self.sourceDeckArray addObject:sourceDeck];
         [sourceDeck release];
         sourceDeck = nil;
@@ -86,6 +89,7 @@
             [card release];
             card = nil;
 		}
+        [[sourceDeck.cardArray lastObject] setTurned:true];
         [self.sourceDeckArray addObject:sourceDeck];
         [sourceDeck release];
         sourceDeck = nil;
@@ -100,6 +104,7 @@
             [card release];
             card = nil;
 		}
+        [[sourceDeck.cardArray lastObject] setTurned:true];
         [self.sourceDeckArray addObject:sourceDeck];
         [sourceDeck release];
         sourceDeck = nil;
@@ -114,6 +119,7 @@
             [card release];
             card = nil;
 		}
+        [[sourceDeck.cardArray lastObject] setTurned:true];
         [self.sourceDeckArray addObject:sourceDeck];
         [sourceDeck release];
         sourceDeck = nil;
@@ -128,6 +134,7 @@
             [card release];
             card = nil;
 		}
+        [[sourceDeck.cardArray lastObject] setTurned:true];
         [self.sourceDeckArray addObject:sourceDeck];
         [sourceDeck release];
         sourceDeck = nil;
