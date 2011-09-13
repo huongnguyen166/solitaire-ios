@@ -402,12 +402,17 @@
     _activeCard = [self findActiveCard:point];
     // Handle source deck and waste2 touch
     if (_activeCard && ([[_activeCard ownerDeck]deckType] == ESource ||
-        [[_activeCard ownerDeck]deckType] == EWaste2))
-    {
-        xCap = point.x - _activeCard.cardRect.origin.x;
-        yCap = point.y - _activeCard.cardRect.origin.y;
-        [_activeCard setTurned: true];
-        [_activeCard storeCurrentPos];
+                        [[_activeCard ownerDeck]deckType] == EWaste2)) {
+        if (_activeCard.cardParent == nil || 
+            (_activeCard.cardParent && _activeCard.cardParent.turned && _activeCard.turned)) {
+            xCap = point.x - _activeCard.cardRect.origin.x;
+            yCap = point.y - _activeCard.cardRect.origin.y;
+            [_activeCard setTurned: true];
+            [_activeCard storeCurrentPos];
+        } else {
+            _activeCard = nil;
+        }
+        
 	}
     // Handle waste1 deck touch
     else if (_activeCard && [[_activeCard ownerDeck]deckType] == EWaste1) {
@@ -440,7 +445,7 @@
         CGPoint point = [touch locationInView:self];
 		[_activeCard setPos:point.x - xCap:point.y - yCap];
 		
-        
+    
         // Change car deck to another
         Deck* toDeck = [self findActiveDeck:point];
         if (toDeck) {
