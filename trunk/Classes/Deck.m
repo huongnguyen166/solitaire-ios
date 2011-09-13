@@ -89,14 +89,31 @@
 
 -(void)drawDeck 
 {
-    for(int i = 0 ; i < [self.cardArray count] ; i++)
-	{
-        Card* card = [self.cardArray objectAtIndex:i];
-		//CGPoint drawingTargetPoint = CGPointMake(card.cardRect.origin.x,card.cardRect.origin.y);
-		//[card.backgroundImage drawAtPoint:drawingTargetPoint];
+    if (self.deckType == ESource) {
+        // Draw all cards in ESource decks
+        for(int i = 0 ; i < [self.cardArray count] ; i++)
+        {
+            Card* card = [self.cardArray objectAtIndex:i];        
+            [card drawCard];
+        }
+    }
+    else {
+        // Draw only top 2 cards in other decks
+        if([self.cardArray count]>2) {
+            Card* card = [self.cardArray objectAtIndex:[self.cardArray count]-2];        
+            [card drawCard];
+            card = [self.cardArray objectAtIndex:[self.cardArray count]-1];        
+            [card drawCard];
+        } else {
+            for(int i = 0 ; i < [self.cardArray count] ; i++)
+            {
+                Card* card = [self.cardArray objectAtIndex:i];        
+                [card drawCard];
+            }
+        }
         
-        [card drawCard];
-	}
+    }
+    
 	
 }
 
