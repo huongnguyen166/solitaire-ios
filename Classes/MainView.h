@@ -5,6 +5,8 @@
 
 
 #import <Foundation/Foundation.h>
+#include <stdlib.h>
+
 #import "Card.h"
 #import "Deck.h"
 
@@ -14,6 +16,8 @@
 	
     // Active card under user touch
 	Card* _activeCard; 
+    
+    NSMutableArray* _cardsArray;
     
     // Source decks
     NSMutableArray* _sourceDeckArray;
@@ -29,13 +33,15 @@
 -(void)dealloc;
 -(Card*)findActiveCard:(CGPoint)point;
 -(Deck*)findActiveDeck:(CGPoint)point;
+-(void)createCards:(int)width:(int)height;
+-(Card*)getRandomCard;
 
 
 @property (nonatomic, retain) NSMutableArray* sourceDeckArray;
 @property (nonatomic, retain) NSMutableArray* targetDeckArray;
 @property (nonatomic, retain) Deck* wasteDeck1;
 @property (nonatomic, retain) Deck* wasteDeck2;
-
+@property (nonatomic, retain) NSMutableArray* cardsArray;
 
 
 
