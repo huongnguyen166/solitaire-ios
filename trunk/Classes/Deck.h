@@ -20,6 +20,7 @@ typedef enum DeckType {
     NSMutableArray* _cardArray;
     int _deckId;
 	CGRect _deckRect;
+    CGRect _drawRect;
     int _deckZ;
     DeckType _deckType;
 
@@ -42,5 +43,6 @@ typedef enum DeckType {
 @property CGRect deckRect;
 @property int deckZ;
 @property DeckType deckType;
+@property CGRect drawRect;
 
 @end
