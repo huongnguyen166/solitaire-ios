@@ -17,6 +17,8 @@
     
     // Source decks
     NSMutableArray* _sourceDeckArray;
+    NSMutableArray* _targetDeckArray;
+    
 }
 
 -(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event;
@@ -28,5 +30,6 @@
 
 
 @property (nonatomic, retain) NSMutableArray* sourceDeckArray;
+@property (nonatomic, retain) NSMutableArray* targetDeckArray;
 
 @end
