@@ -266,7 +266,6 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -274,7 +273,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>15</integer>
+									<integer>7</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>9A7581E1141F3C21003F9227</string>
+										<string>9A7582D8141F4C7B003F9227</string>
 										<key>history</key>
 										<array>
 											<string>9A821B1114188EB20037F2AB</string>
@@ -337,7 +337,6 @@
 											<string>9A7A24521419DAE80017AA52</string>
 											<string>9A7817F7141B3F3D00FA36D9</string>
 											<string>9A781800141B3F3D00FA36D9</string>
-											<string>9A76BEBF141E2547006BE321</string>
 											<string>9A76BEC1141E2547006BE321</string>
 											<string>9A76BF03141E29FB006BE321</string>
 											<string>9A76BF4E141E2F0B006BE321</string>
@@ -346,12 +345,13 @@
 											<string>9A76BF69141E3305006BE321</string>
 											<string>9A76BF6B141E3305006BE321</string>
 											<string>9A76BFAD141E352E006BE321</string>
-											<string>9A7580FE141F347F003F9227</string>
-											<string>9A75813F141F3913003F9227</string>
 											<string>9A758140141F3913003F9227</string>
-											<string>9A758141141F3913003F9227</string>
-											<string>9A758142141F3913003F9227</string>
-											<string>9A758143141F3913003F9227</string>
+											<string>9A758216141F42DC003F9227</string>
+											<string>9A75827B141F47C3003F9227</string>
+											<string>9A7582CB141F4C45003F9227</string>
+											<string>9A7582CC141F4C45003F9227</string>
+											<string>9A7582D3141F4C66003F9227</string>
+											<string>9A7582D4141F4C66003F9227</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -549,10 +549,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>9A8A7A7A1415D06D008DE969</string>
 		<string>/Users/macmini/Documents/Solitaire-iOS/Solitaire.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 122 1024 624 0 0 1024 746 </string>
@@ -728,10 +728,10 @@
 									<key>Frame</key>
 									<string>{{316, 0}, {378, 203}}</string>
 									<key>RubberWindowFrame</key>
-									<string>21 301 694 422 0 0 1024 746 </string>
+									<string>300 222 694 422 0 0 1024 746 </string>
 								</dict>
 								<key>RubberWindowFrame</key>
-								<string>21 301 694 422 0 0 1024 746 </string>
+								<string>300 222 694 422 0 0 1024 746 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugSessionModule</string>
@@ -765,7 +765,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
 			<key>WindowString</key>
-			<string>21 301 694 422 0 0 1024 746 </string>
+			<string>300 222 694 422 0 0 1024 746 </string>
 			<key>WindowToolGUID</key>
 			<string>1CD10A99069EF8BA00B06720</string>
 			<key>WindowToolIsVisible</key>
@@ -887,6 +887,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -932,7 +934,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
