@@ -87,9 +87,7 @@
 {
     if (self.deckType == ESource) {
         // Draw all cards in ESource decks
-        for(int i = 0 ; i <= [self.cardArray count]-1 ; i++)
-        {
-            Card* card = [self.cardArray objectAtIndex:i];        
+        for(Card* card in self.cardArray) {
             [card drawCard];
         }
     }
@@ -101,37 +99,27 @@
             card = [self.cardArray objectAtIndex:[self.cardArray count]-1];        
             [card drawCard];
         } else {
-            for(int i = 0 ; i <= [self.cardArray count]-1 ; i++)
-            {
-                Card* card = [self.cardArray objectAtIndex:i];        
+            for(Card* card in self.cardArray) {
                 [card drawCard];
             }
         }
-        
     }
-    
-	
 }
+
 
 - (Card*)getCardAtPos:(CGPoint)point
 {
     // Try to find card under (touch) point
     Card* activeCard = nil;
-    for(int i = 0 ; i < [self.cardArray count] ; i++)
-    {
-        Card* card = [self.cardArray objectAtIndex:i];
-        if (CGRectContainsPoint(card.cardRect,point))
-        {
-            if (activeCard==nil)
-            {
+    for(Card* card in self.cardArray) {
+        if (CGRectContainsPoint(card.cardRect,point)) {
+            if (activeCard==nil) {
                 activeCard = card;
             }
-            else 
-            {
+            else {
                 if (card.zOrder > activeCard.zOrder) 
                     activeCard = card;
             }
-        
         }		
     }
     // Return fourd card
