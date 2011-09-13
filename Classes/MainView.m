@@ -9,6 +9,7 @@
 
 @implementation MainView
 @synthesize sourceDeckArray = _sourceDeckArray;
+@synthesize targetDeckArray = _targetDeckArray;
 
 
 -(id) initWithCoder:(NSCoder*)sourceCoder
@@ -27,7 +28,7 @@
         // Source decks
         Deck* sourceDeck = [Deck alloc];
         [sourceDeck initWithData:cap:cardHeight*2:1:cardWidth:cardHeight:ESource];
-		for (int i=0;i<2;i++)
+		for (int i=0;i<=1;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
@@ -42,7 +43,7 @@
         
         sourceDeck = [Deck alloc];
         [sourceDeck initWithData:cap*2+cardWidth:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<3;i++)
+		for (int i=0;i<=2;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
@@ -57,7 +58,7 @@
         
         sourceDeck = [Deck alloc];
         [sourceDeck initWithData:cap*3+cardWidth*2:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<4;i++)
+		for (int i=0;i<=3;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
@@ -72,7 +73,7 @@
         
         sourceDeck = [Deck alloc];
         [sourceDeck initWithData:cap*4+cardWidth*3:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<5;i++)
+		for (int i=0;i<=4;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
@@ -87,7 +88,7 @@
         
         sourceDeck = [Deck alloc];
         [sourceDeck initWithData:cap*5+cardWidth*4:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<6;i++)
+		for (int i=0;i<=5;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
@@ -102,7 +103,7 @@
         
         sourceDeck = [Deck alloc];
         [sourceDeck initWithData:cap*6+cardWidth*5:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<7;i++)
+		for (int i=0;i<=6;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
@@ -117,7 +118,7 @@
         
         sourceDeck = [Deck alloc];
         [sourceDeck initWithData:cap*7+cardWidth*6:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<8;i++)
+		for (int i=0;i<=7;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
@@ -129,6 +130,69 @@
         [sourceDeck release];
         sourceDeck = nil;
         
+        
+        
+        
+        // Array for the target decks
+        self.targetDeckArray = [[NSMutableArray alloc] init];
+        
+        // Target decks
+        Deck* targetDeck = [Deck alloc];
+        [targetDeck initWithData:cap*4+cardWidth*3:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
+		for (int i=0;i<=1;i++)
+		{
+			Card* card = [Card alloc];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            [targetDeck addCard:card];
+            [card release];
+            card = nil;
+		}
+        [self.targetDeckArray addObject:targetDeck];
+        [targetDeck release];
+        targetDeck = nil;
+
+        
+        targetDeck = [Deck alloc];
+        [targetDeck initWithData:cap*5+cardWidth*4:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
+		for (int i=0;i<=1;i++)
+		{
+			Card* card = [Card alloc];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            [targetDeck addCard:card];
+            [card release];
+            card = nil;
+		}
+        [self.targetDeckArray addObject:targetDeck];
+        [targetDeck release];
+        targetDeck = nil;
+
+        targetDeck = [Deck alloc];
+        [targetDeck initWithData:cap*6+cardWidth*5:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
+		for (int i=0;i<=1;i++)
+		{
+			Card* card = [Card alloc];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            [targetDeck addCard:card];
+            [card release];
+            card = nil;
+		}
+        [self.targetDeckArray addObject:targetDeck];
+        [targetDeck release];
+        targetDeck = nil;
+        
+        targetDeck = [Deck alloc];
+        [targetDeck initWithData:cap*7+cardWidth*6:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
+		for (int i=0;i<=1;i++)
+		{
+			Card* card = [Card alloc];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            [targetDeck addCard:card];
+            [card release];
+            card = nil;
+		}
+        [self.targetDeckArray addObject:targetDeck];
+        [targetDeck release];
+        targetDeck = nil;
         
         
         
@@ -156,6 +220,10 @@
 	
     // Draw decks
     for(Deck* deck in self.sourceDeckArray)
+    {
+        [deck drawDeck];
+    }
+    for(Deck* deck in self.targetDeckArray)
     {
         [deck drawDeck];
     }
@@ -191,9 +259,19 @@
         if(CGRectContainsPoint(deck.deckRect,point))
         {
             ret = deck;
-            break;
+            return ret;
         }
     }    
+    for(Deck* deck in self.targetDeckArray)
+    {
+        if(CGRectContainsPoint(deck.deckRect,point))
+        {
+            ret = deck;
+            return ret;
+        }
+    }    
+    
+    
     return ret;
 }
 
@@ -236,6 +314,7 @@
         // Change car deck to another
         Deck* toDeck = [self findActiveDeck:point];
         if (toDeck) {
+            // TODO: add game logic
             BOOL ret = [_activeCard changeDeckTo:_activeCard.ownerDeck:toDeck];
             if (!ret) 
                [_activeCard cancelMove]; 
