@@ -22,7 +22,6 @@ typedef enum CardType {
 	UIImage* _foregroundImage;
 	CGRect _cardRect;
 	int _cardId;
-	int _cardLand;
 	BOOL _turned;
 	Card* _cardParent;
 	int _zOrder;
@@ -33,7 +32,7 @@ typedef enum CardType {
 }
 
 - (id)initWithData:(CardType)type:(NSString*)cardName:
-(int)x:(int)y:(int)cId:(int)cLand:(int)z:(int)width:(int)height;
+(int)x:(int)y:(int)cId:(int)z:(int)width:(int)height;
 - (void)setPos:(int)x:(int)y;
 - (void)dealloc;
 - (void)storeCurrentPos;
@@ -46,7 +45,6 @@ typedef enum CardType {
 @property (nonatomic, retain) UIImage* foregroundImage;
 @property CGRect cardRect;
 @property int cardId;
-@property int cardLand;
 @property BOOL turned;
 @property (nonatomic, retain) Card* cardParent;
 @property int zOrder;
