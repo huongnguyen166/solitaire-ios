@@ -475,12 +475,11 @@
 -(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard
 {
 
-    if (!onTopOfCard) {
-        
-    }
-    if (!onTopOfCard.turned) {
+    if (onTopOfCard && !onTopOfCard.turned) {
         return false;
     }
+ 
+    
     
     return true;
 }
