@@ -201,7 +201,7 @@
         // Waste decks
         self.wasteDeck1 = [Deck alloc];
         [self.wasteDeck1 initWithData:cap:cardHeight*0.5:2:cardWidth:cardHeight:EWaste1];
-		for (int i=0;i<=1;i++)
+		for (int i=0;i<=10;i++)
 		{
 			Card* card = [Card alloc];
             [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
@@ -277,9 +277,14 @@
     for(Deck* deck in self.sourceDeckArray)
     {
         card = [deck getCardAtPos:point];
-        if (card)
-            break;
+        if (card) {
+            return card;
+        }
+        card = nil;
     }    
+ 
+    card = [self.wasteDeck1 getCardAtPos:point];
+    
     return card;
 }
 
@@ -304,6 +309,13 @@
         }
     }    
     
+    /*
+    if(CGRectContainsPoint(self.wasteDeck1.deckRect,point))
+    {
+        ret = self.wasteDeck1;
+        return ret;
+    }
+    */
     
     return ret;
 }
@@ -314,13 +326,22 @@
     CGPoint point = [touchPoint locationInView:self];   
 	
     _activeCard = [self findActiveCard:point];
-    if (_activeCard)
+    // Handle source deck touch
+    if (_activeCard && [[_activeCard ownerDeck]deckType] == ESource)
     {
         xCap = point.x - _activeCard.cardRect.origin.x;
         yCap = point.y - _activeCard.cardRect.origin.y;
         
         [_activeCard storeCurrentPos];
 	}
+    // Handle waste1 deck touch
+    else if (_activeCard && [[_activeCard ownerDeck]deckType] == EWaste1) {
+        [_activeCard changeDeckTo:_activeCard.ownerDeck:_wasteDeck2];
+        _activeCard = nil;
+        [self setNeedsDisplay];
+    }
+    
+    
 }
 
 
