@@ -18,6 +18,8 @@
     // Source decks
     NSMutableArray* _sourceDeckArray;
     NSMutableArray* _targetDeckArray;
+    Deck* _wasteDeck1;
+    Deck* _wasteDeck2;
     
 }
 
@@ -31,5 +33,10 @@
 
 @property (nonatomic, retain) NSMutableArray* sourceDeckArray;
 @property (nonatomic, retain) NSMutableArray* targetDeckArray;
+@property (nonatomic, retain) Deck* wasteDeck1;
+@property (nonatomic, retain) Deck* wasteDeck2;
+
+
+
 
 @end

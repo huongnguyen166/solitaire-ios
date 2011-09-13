@@ -11,7 +11,7 @@ typedef enum DeckType {
     ESource,
     ETarget,
     EWaste1,
-    WWaste2
+    EWaste2
 } DeckType;
 
 
