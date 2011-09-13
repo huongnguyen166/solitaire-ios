@@ -10,6 +10,9 @@
 @implementation MainView
 @synthesize sourceDeckArray = _sourceDeckArray;
 @synthesize targetDeckArray = _targetDeckArray;
+@synthesize wasteDeck1 = _wasteDeck1;
+@synthesize wasteDeck2 = _wasteDeck2;
+
 
 
 -(id) initWithCoder:(NSCoder*)sourceCoder
@@ -17,7 +20,7 @@
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
         int screenWidth = self.bounds.size.width;
-        int screenHeight = self.bounds.size.height;
+        //int screenHeight = self.bounds.size.height;
         int cardWidth = screenWidth / 9;
         int cardHeight = cardWidth * 1.7;
         int cap = (screenWidth - cardWidth*7) / 8;
@@ -195,6 +198,29 @@
         targetDeck = nil;
         
         
+        // Waste decks
+        self.wasteDeck1 = [Deck alloc];
+        [self.wasteDeck1 initWithData:cap:cardHeight*0.5:2:cardWidth:cardHeight:EWaste1];
+		for (int i=0;i<=1;i++)
+		{
+			Card* card = [Card alloc];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            [self.wasteDeck1 addCard:card];
+            [card release];
+            card = nil;
+		}
+        self.wasteDeck2 = [Deck alloc];
+        [self.wasteDeck2 initWithData:cap*2+cardWidth:cardHeight*0.5:2:cardWidth:cardHeight:EWaste2];
+		for (int i=0;i<=1;i++)
+		{
+			Card* card = [Card alloc];
+            [card initWithData:@"Club_ace.png":0:0:0:0:i:cardWidth:cardHeight];
+            [self.wasteDeck2 addCard:card];
+            [card release];
+            card = nil;
+		}
+        
+        
         
 	}
 	return self;
@@ -204,7 +230,13 @@
 	[_sourceDeckArray release];
     _sourceDeckArray = nil;
         
-
+    [_wasteDeck1 release];
+    _wasteDeck1 = nil;
+    
+    [_wasteDeck2 release];
+    _wasteDeck2 = nil;
+    
+    _activeCard = nil;
     
 	// Remember to call base class dealloc
     [super dealloc];
@@ -227,8 +259,9 @@
     {
         [deck drawDeck];
     }
+    [self.wasteDeck1 drawDeck];
+	[self.wasteDeck2 drawDeck];
     
-	
     // Draw active card on top of all others
 	if (_activeCard)
 	{
