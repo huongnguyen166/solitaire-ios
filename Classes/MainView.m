@@ -454,12 +454,14 @@
             // TODO: add game logic
             BOOL acceptMove = [self acceptCardMove:_activeCard.ownerDeck:toDeck:onTopOfCard];
             if(acceptMove) {
+                NSLog(@"accept");
                 // From deck to new deck
                 BOOL ret = [_activeCard changeDeckTo:_activeCard.ownerDeck:toDeck];
                 if (!ret) {
                     [_activeCard cancelMove];
                 }
             } else {
+                NSLog(@"no");
                 [_activeCard cancelMove];
             }
         } else {
