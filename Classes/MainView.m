@@ -449,13 +449,19 @@
         // Change car deck to another
         Deck* toDeck = [self findActiveDeck:point];
         if (toDeck) {
-            //Card* onTopOfCard = [toDeck getTopCard];
+            Card* onTopOfCard = [toDeck getTopCard];
             
             // TODO: add game logic
-            // From deck to new deck
-            BOOL ret = [_activeCard changeDeckTo:_activeCard.ownerDeck:toDeck];
-            if (!ret) 
-               [_activeCard cancelMove]; 
+            BOOL acceptMove = [self acceptCardMove:_activeCard.ownerDeck:toDeck:onTopOfCard];
+            if(acceptMove) {
+                // From deck to new deck
+                BOOL ret = [_activeCard changeDeckTo:_activeCard.ownerDeck:toDeck];
+                if (!ret) {
+                    [_activeCard cancelMove];
+                }
+            } else {
+                [_activeCard cancelMove];
+            }
         } else {
             [_activeCard cancelMove];
         }
@@ -464,7 +470,16 @@
         [self setNeedsDisplay];
 		_activeCard = nil;
 	}
+}
+
+-(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard
+{
+
+    if (!onTopOfCard.turned) {
+        return false;
+    }
     
+    return true;
 }
 
 

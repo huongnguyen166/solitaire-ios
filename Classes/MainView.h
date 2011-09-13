@@ -35,7 +35,7 @@
 -(Deck*)findActiveDeck:(CGPoint)point;
 -(void)createCards:(int)width:(int)height;
 -(Card*)getRandomCard;
-
+-(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard;
 
 @property (nonatomic, retain) NSMutableArray* sourceDeckArray;
 @property (nonatomic, retain) NSMutableArray* targetDeckArray;
