@@ -475,10 +475,40 @@
 -(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard
 {
 
-    if (onTopOfCard && !onTopOfCard.turned) {
+    if (onTopOfCard && !onTopOfCard.turned)
+        return false;
+ 
+    if (from.deckType != ESource && from.deckType != EWaste2)
+        return false;
+    
+    if (to.deckType != ESource && to.deckType != ETarget)
+        return false;
+    
+    if (to == from) {
         return false;
     }
- 
+    
+    
+    if (to.cardArray.count > 0) {
+        if (to.deckType == ESource) {
+            if(_activeCard.cardType == onTopOfCard.cardType || 
+               onTopOfCard.cardId != _activeCard.cardId+1 || 
+                onTopOfCard.black == _activeCard.black) {
+                    return false;
+            }            
+        } else if (to.deckType == ETarget) {
+            if(onTopOfCard.cardId+1 != _activeCard.cardId ||
+               onTopOfCard.cardType != _activeCard.cardType) {
+                return false;
+            }
+        }   
+    } else {
+        if(_activeCard.cardId != 13 && to.deckType == ESource)
+            return false;
+        
+        if(to.deckType == ETarget && _activeCard.cardId != 1)
+            return false;
+    }
     
     
     return true;

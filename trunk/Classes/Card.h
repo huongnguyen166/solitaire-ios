@@ -28,6 +28,7 @@ typedef enum CardType {
     CGPoint _oldPoint;
     Deck* _ownerDeck;
     CardType _cardType;
+    BOOL _black;
 	
 }
 
@@ -51,5 +52,6 @@ typedef enum CardType {
 @property CGPoint oldPoint;
 @property (nonatomic, assign) Deck* ownerDeck;
 @property CardType cardType;
+@property BOOL black;
 
 @end
