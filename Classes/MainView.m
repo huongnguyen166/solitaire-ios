@@ -450,8 +450,6 @@
         Deck* toDeck = [self findActiveDeck:point];
         if (toDeck) {
             Card* onTopOfCard = [toDeck getTopCard];
-            
-            // TODO: add game logic
             BOOL acceptMove = [self acceptCardMove:_activeCard.ownerDeck:toDeck:onTopOfCard];
             if(acceptMove) {
                 NSLog(@"accept");
@@ -471,27 +469,38 @@
         
         [self setNeedsDisplay];
 		_activeCard = nil;
+        toDeck = nil;
 	}
 }
 
 -(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard
 {
 
+    return true;
+    
     if (onTopOfCard && !onTopOfCard.turned)
         return false;
  
+    NSLog(@"to = %d", [to deckType]);
+    
+    NSLog(@"1");
     if (from.deckType != ESource && from.deckType != EWaste2)
         return false;
     
+    NSLog(@"2");
+
     if (to.deckType != ESource && to.deckType != ETarget)
         return false;
     
+    NSLog(@"3");
     if (to == from) {
         return false;
     }
     
+    NSLog(@"4");
     
-    if (to.cardArray.count > 0) {
+    if ([to.cardArray count]>2) {
+    NSLog(@"11");
         if (to.deckType == ESource) {
             if(_activeCard.cardType == onTopOfCard.cardType || 
                onTopOfCard.cardId != _activeCard.cardId+1 || 
@@ -505,6 +514,7 @@
             }
         }   
     } else {
+        NSLog(@"111");
         if(_activeCard.cardId != 13 && to.deckType == ESource)
             return false;
         

@@ -36,7 +36,8 @@
         rect.size.height = height;
         self.deckRect = rect;
 
-        self.deckId = dId;
+        // TODO: remove, not in use
+        //self.deckId = dId;
         
         self.drawRect = self.deckRect;
         
