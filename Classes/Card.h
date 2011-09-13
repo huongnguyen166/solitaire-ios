@@ -19,10 +19,11 @@ typedef enum CardType {
 
 @interface Card : NSObject {
 	UIImage* _backgroundImage;
+	UIImage* _foregroundImage;
 	CGRect _cardRect;
 	int _cardId;
 	int _cardLand;
-	BOOL _isTurned;
+	BOOL _turned;
 	Card* _cardParent;
 	int _zOrder;
     CGPoint _oldPoint;
@@ -42,10 +43,11 @@ typedef enum CardType {
 - (void)drawCard; 
 
 @property (nonatomic, retain) UIImage* backgroundImage;
+@property (nonatomic, retain) UIImage* foregroundImage;
 @property CGRect cardRect;
 @property int cardId;
 @property int cardLand;
-@property BOOL isTurned;
+@property BOOL turned;
 @property (nonatomic, retain) Card* cardParent;
 @property int zOrder;
 @property CGPoint oldPoint;

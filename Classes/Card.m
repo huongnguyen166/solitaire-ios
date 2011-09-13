@@ -9,10 +9,11 @@
 @implementation Card
 
 @synthesize backgroundImage = _backgroundImage;
+@synthesize foregroundImage = _foregroundImage;
 @synthesize cardRect = _cardRect;
 @synthesize cardId = _cardId;
 @synthesize cardLand = _cardLand;
-@synthesize isTurned = _isTurned;
+@synthesize turned = _turned;
 @synthesize cardParent = _cardParent;
 @synthesize zOrder = _zOrder;
 @synthesize oldPoint = _oldPoint;
@@ -29,12 +30,14 @@
     if (self)
     {
     // Load card graphics
-	self.backgroundImage = [UIImage imageNamed:cardName];
+	self.foregroundImage = [UIImage imageNamed:cardName];
+    self.backgroundImage = [UIImage imageNamed:@"cardback.png"];
 	
     self.cardType = type;
     // or for example
     //[self setCardType:type];
         
+    self.turned = false;
         
     // Set card position and z order
 	CGPoint point;
@@ -55,13 +58,20 @@
 	[_backgroundImage release];
     _backgroundImage = nil;
 
+    [_foregroundImage release];
+    _foregroundImage = nil;
+    
 	// Remember to call base class dealloc
     [super dealloc];
 }
 
 - (void)drawCard
 {
-    [self.backgroundImage drawInRect:self.cardRect];
+    if(self.turned)
+        [self.foregroundImage drawInRect:self.cardRect];
+    else
+        [self.backgroundImage drawInRect:self.cardRect];
+    
 }
 
 - (void)storeCurrentPos
