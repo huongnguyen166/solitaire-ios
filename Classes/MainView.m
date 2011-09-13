@@ -475,6 +475,9 @@
 -(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard
 {
 
+    if (!onTopOfCard) {
+        
+    }
     if (!onTopOfCard.turned) {
         return false;
     }

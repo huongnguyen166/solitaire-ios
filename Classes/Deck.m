@@ -12,6 +12,7 @@
 @synthesize deckRect = _deckRect;
 @synthesize deckZ = _deckZ;
 @synthesize deckType = _deckType;
+@synthesize drawRect = _drawRect;
 
 
 - (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height:(DeckType)type
@@ -34,7 +35,11 @@
         rect.size.width = width;
         rect.size.height = height;
         self.deckRect = rect;
+
         self.deckId = dId;
+        
+        self.drawRect = self.deckRect;
+        
     }
     return self;
 }
@@ -52,7 +57,7 @@
     // Set card new position
     CGPoint pos;
     pos.x = self.deckRect.origin.x;
-    if (self.deckType == ESource)
+    if (self.deckType == ESource && [self.cardArray count]>0)
         pos.y = self.deckRect.origin.y + (15 * [self.cardArray count]-1);
     else {
         pos.y = self.deckRect.origin.y;
@@ -92,6 +97,10 @@
 
 -(void)drawDeck 
 {
+    
+    [[UIColor whiteColor] set];
+    UIRectFrame([self drawRect]);
+    
     if (self.deckType == ESource) {
         // Draw all cards in ESource decks
         for(Card* card in self.cardArray) {
