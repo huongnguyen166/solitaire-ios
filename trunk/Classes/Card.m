@@ -12,7 +12,6 @@
 @synthesize foregroundImage = _foregroundImage;
 @synthesize cardRect = _cardRect;
 @synthesize cardId = _cardId;
-@synthesize cardLand = _cardLand;
 @synthesize turned = _turned;
 @synthesize cardParent = _cardParent;
 @synthesize zOrder = _zOrder;
@@ -23,7 +22,7 @@
 
 
 - (id)initWithData:(CardType)type:(NSString*)cardName:
-    (int)x:(int)y:(int)cId:(int)cLand:(int)z:(int)width:(int)height
+    (int)x:(int)y:(int)cId:(int)z:(int)width:(int)height
 {
 	self = [super init];
 
@@ -38,6 +37,8 @@
     //[self setCardType:type];
         
     self.turned = false;
+    
+    self.cardId = cId;
         
     // Set card position and z order
 	CGPoint point;
