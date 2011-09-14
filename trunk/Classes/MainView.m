@@ -150,13 +150,6 @@
         // Target decks
         Deck* targetDeck = [Deck alloc];
         [targetDeck initWithData:cap*4+cardWidth*3:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
-		for (int i=0;i<=1;i++)
-		{
-            Card* card = [self getRandomCard];
-            [targetDeck addCard:card];
-            [card release];
-            card = nil;
-		}
         [self.targetDeckArray addObject:targetDeck];
         [targetDeck release];
         targetDeck = nil;
@@ -164,39 +157,18 @@
  
         targetDeck = [Deck alloc];
         [targetDeck initWithData:cap*5+cardWidth*4:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
-		for (int i=0;i<=1;i++)
-		{
-            Card* card = [self getRandomCard];
-            [targetDeck addCard:card];
-            [card release];
-            card = nil;
-		}
         [self.targetDeckArray addObject:targetDeck];
         [targetDeck release];
         targetDeck = nil;
 
         targetDeck = [Deck alloc];
         [targetDeck initWithData:cap*6+cardWidth*5:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
-		for (int i=0;i<=1;i++)
-		{
-            Card* card = [self getRandomCard];
-            [targetDeck addCard:card];
-            [card release];
-            card = nil;
-		}
         [self.targetDeckArray addObject:targetDeck];
         [targetDeck release];
         targetDeck = nil;
         
         targetDeck = [Deck alloc];
         [targetDeck initWithData:cap*7+cardWidth*6:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
-		for (int i=0;i<=1;i++)
-		{
-            Card* card = [self getRandomCard];
-            [targetDeck addCard:card];
-            [card release];
-            card = nil;
-		}
         [self.targetDeckArray addObject:targetDeck];
         [targetDeck release];
         targetDeck = nil;
@@ -485,33 +457,23 @@
 
 -(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard
 {
-
-    //return true;
     
     if (onTopOfCard && !onTopOfCard.turned)
         return false;
- 
-    NSLog(@"to = %d", [to deckType]);
-    NSLog(@"from = %d", [from deckType]);
-    
-    NSLog(@"1");
+     
     if (from.deckType != ESource && from.deckType != EWaste2)
         return false;
     
-    NSLog(@"2");
-
+ 
     if (to.deckType != ESource && to.deckType != ETarget)
         return false;
     
-    NSLog(@"3");
     if (to == from) {
         return false;
     }
     
-    NSLog(@"4");
     
-    if ([to.cardArray count]>2) {
-    NSLog(@"11");
+    if ([to.cardArray count]>0) {
         if (to.deckType == ESource) {
             if(_activeCard.cardType == onTopOfCard.cardType || 
                onTopOfCard.cardId != _activeCard.cardId+1 || 
@@ -525,7 +487,6 @@
             }
         }   
     } else {
-        NSLog(@"111");
         if(_activeCard.cardId != 13 && to.deckType == ESource)
             return false;
         
