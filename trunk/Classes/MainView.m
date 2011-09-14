@@ -177,27 +177,18 @@
         // Waste decks
         self.wasteDeck1 = [Deck alloc];
         [self.wasteDeck1 initWithData:cap:cardHeight*0.5:2:cardWidth:cardHeight:EWaste1];
-		for (int i=0;i<=5;i++)
-		{
+        while ([self.cardsArray count] > 1) {
             Card* card = [self getRandomCard];
             [self.wasteDeck1 addCard:card];
             [card release];
             card = nil;
-		}
+        }
+        
         self.wasteDeck2 = [Deck alloc];
         [self.wasteDeck2 initWithData:cap*2+cardWidth:cardHeight*0.5:2:cardWidth:cardHeight:EWaste2];
-		for (int i=0;i<=1;i++)
-		{
-            Card* card = [self getRandomCard];
-            [self.wasteDeck2 addCard:card];
-            [card release];
-            card = nil;
-		}
-        
-        
-        
 	}
-	return self;
+	
+    return self;
 }
 
 - (void)dealloc {
