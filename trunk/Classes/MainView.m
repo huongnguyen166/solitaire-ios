@@ -341,7 +341,7 @@
     // Draw active card on top of all others
 	if (_activeCard)
 	{
-		[_activeCard drawCard];		
+		[_activeCard drawMeAndParentCard];		
 	}
 	
 }

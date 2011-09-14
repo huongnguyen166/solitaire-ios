@@ -32,15 +32,15 @@ typedef enum CardType {
 	
 }
 
-- (id)initWithData:(CardType)type:(NSString*)cardName:
-(int)x:(int)y:(int)cId:(int)z:(int)width:(int)height;
-- (void)setPos:(int)x:(int)y;
-- (void)dealloc;
-- (void)storeCurrentPos;
-- (void)cancelMove;
-- (void)setDeck:(Deck*)deck;
-- (BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck;
-- (void)drawCard; 
+-(id)initWithData:(CardType)type:(NSString*)cardName:(int)x:(int)y:(int)cId:(int)z:(int)width:(int)height;
+-(void)setPos:(int)x:(int)y;
+-(void)dealloc;
+-(void)storeCurrentPos;
+-(void)cancelMove;
+-(void)setDeck:(Deck*)deck;
+-(BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck;
+-(void)drawCard;
+-(void)drawMeAndParentCard;
 
 @property (nonatomic, retain) UIImage* backgroundImage;
 @property (nonatomic, retain) UIImage* foregroundImage;
