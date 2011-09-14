@@ -294,8 +294,11 @@
 }
 
 -(void)drawRect:(CGRect)rect {
-    //CGContextRef    context = UIGraphicsGetCurrentContext();
-	
+    
+    CGContextRef    context = UIGraphicsGetCurrentContext();
+    // Disable antialias
+    CGContextSetShouldAntialias(context,false);
+    
     // Game background
 	//[[UIColor greenColor] set];
 	//UIRectFill(rect);
