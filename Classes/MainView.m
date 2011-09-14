@@ -177,7 +177,7 @@
         // Waste decks
         self.wasteDeck1 = [Deck alloc];
         [self.wasteDeck1 initWithData:cap:cardHeight*0.5:2:cardWidth:cardHeight:EWaste1];
-        while ([self.cardsArray count] > 1) {
+        while ([self.cardsArray count] > 0) {
             Card* card = [self getRandomCard];
             [self.wasteDeck1 addCard:card];
             [card release];
@@ -275,9 +275,11 @@
 -(Card*)getRandomCard
 {
     Card* ret = nil;
-    
+    int r = -1;
+            
     int max = ([self.cardsArray count]-1);
-    int r = arc4random() % max;
+    if (max>0)
+        r = arc4random() % max;
     
     if(r<0)
         r = 0;
