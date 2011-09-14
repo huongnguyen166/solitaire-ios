@@ -27,6 +27,8 @@
     Deck* _wasteDeck1;
     Deck* _wasteDeck2;
     
+    CGPoint _prevPoint;
+    
 }
 
 -(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event;

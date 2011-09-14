@@ -384,6 +384,8 @@
     UITouch* touchPoint = [touches anyObject]; 
     CGPoint point = [touchPoint locationInView:self];   
 	
+    _prevPoint = point;
+    
     _activeCard = [self findActiveCard:point];
     // Handle source deck and waste2 touch
     if (_activeCard && ([[_activeCard ownerDeck]deckType] == ESource ||
@@ -421,11 +423,17 @@
 		
         //[self setNeedsDisplay];
 
-        // Optimize drawing size doring card moving
-        // TODO: does not work with backgroundimage
+        // Optimize drawing with clipping when user moves cards
+        int x = ABS(_prevPoint.x - point.x) + 10;
+        int y = ABS(_prevPoint.y - point.y) + 10;
+        _prevPoint = point;
         CGRect rect;
-        rect = _activeCard.cardAndParentsRect;
-        [self setNeedsDisplayInRect:_activeCard.cardAndParentsRect];
+        rect = _activeCard.cardRect;
+        rect.origin.x -= x;
+        rect.origin.y -= y;
+        rect.size.width += x*2;
+        rect.size.height = self.bounds.size.height;
+        [self setNeedsDisplayInRect:rect];
 	}
 }
 
