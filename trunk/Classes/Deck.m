@@ -58,8 +58,9 @@
     // Set card new position
     CGPoint pos;
     pos.x = self.deckRect.origin.x;
+    int cap = CARD_CAP;
     if (self.deckType == ESource && [self.cardArray count]>0)
-        pos.y = self.deckRect.origin.y + (15 * [self.cardArray count]-1);
+        pos.y = self.deckRect.origin.y + (cap * [self.cardArray count]-1);
     else {
         pos.y = self.deckRect.origin.y;
     }
@@ -68,7 +69,7 @@
     
     // Make deck rect larger
     CGRect rec = [self deckRect];
-    rec.size = CGSizeMake(rec.size.width, rec.size.height + 15);
+    rec.size = CGSizeMake(rec.size.width, rec.size.height + cap);
     [self setDeckRect:rec];
     
     // Set deck info to card

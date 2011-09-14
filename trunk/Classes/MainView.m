@@ -486,12 +486,13 @@
 -(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard
 {
 
-    return true;
+    //return true;
     
     if (onTopOfCard && !onTopOfCard.turned)
         return false;
  
     NSLog(@"to = %d", [to deckType]);
+    NSLog(@"from = %d", [from deckType]);
     
     NSLog(@"1");
     if (from.deckType != ESource && from.deckType != EWaste2)

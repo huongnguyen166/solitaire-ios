@@ -7,11 +7,13 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 
-typedef enum DeckType {
-    ESource = 1,
-    ETarget = 2,
-    EWaste1 = 3,
-    EWaste2 = 4
+#define CARD_CAP 20;
+
+typedef enum {
+    ESource,
+    ETarget,
+    EWaste1,
+    EWaste2
 } DeckType;
 
 
