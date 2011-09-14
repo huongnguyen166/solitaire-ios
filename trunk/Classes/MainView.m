@@ -297,7 +297,7 @@
 
 -(void)drawRect:(CGRect)rect {
     
-    //CGContextRef    context = UIGraphicsGetCurrentContext();
+    CGContextRef    context = UIGraphicsGetCurrentContext();
     // Disable antialias
     //CGContextSetShouldAntialias(context,false);
     
@@ -323,10 +323,21 @@
     [self.wasteDeck1 drawDeck];
 	[self.wasteDeck2 drawDeck];
     
+    
     // Draw active card on top of all others
 	if (_activeCard)
 	{
-		[_activeCard drawMeAndParentCard];		
+        // Make Shadow
+        CGSize myShadowOffset = CGSizeMake(-10,10);
+        CGContextSaveGState(context);
+        CGContextSetShadow(context, myShadowOffset,5);
+        
+        
+        // Draw the card(s)
+        [_activeCard drawMeAndParentCard];
+		
+        CGContextRestoreGState(context);
+        
 	}
 	
 }
@@ -424,8 +435,8 @@
         //[self setNeedsDisplay];
 
         // Optimize drawing with clipping when user moves cards
-        int x = ABS(_prevPoint.x - point.x) + 10;
-        int y = ABS(_prevPoint.y - point.y) + 10;
+        int x = ABS(_prevPoint.x - point.x) + 15;
+        int y = ABS(_prevPoint.y - point.y) + 15;
         _prevPoint = point;
         CGRect rect;
         rect = _activeCard.cardRect;
