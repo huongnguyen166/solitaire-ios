@@ -41,6 +41,7 @@ typedef enum {
 -(BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck;
 -(void)drawCard;
 -(void)drawMeAndParentCard;
+-(CGRect)cardAndParentsRect;
 
 @property (nonatomic, retain) UIImage* backgroundImage;
 @property (nonatomic, retain) UIImage* foregroundImage;

@@ -6,6 +6,8 @@
 
 #import "MainView.h"
 
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+
 
 @implementation MainView
 @synthesize sourceDeckArray = _sourceDeckArray;
@@ -295,14 +297,19 @@
 
 -(void)drawRect:(CGRect)rect {
     
-    CGContextRef    context = UIGraphicsGetCurrentContext();
+    //CGContextRef    context = UIGraphicsGetCurrentContext();
     // Disable antialias
-    CGContextSetShouldAntialias(context,false);
+    //CGContextSetShouldAntialias(context,false);
     
     // Game background
 	//[[UIColor greenColor] set];
-	//UIRectFill(rect);
-	[self.backgroundImage drawInRect:rect];
+    //[RGB(46, 139, 87) set];
+    [RGB(0, 100, 0) set];
+	UIRectFill(rect);
+    
+    //[self.backgroundImage drawInRect:rect];
+    
+    
     
     // Draw decks
     for(Deck* deck in self.sourceDeckArray)
@@ -411,7 +418,14 @@
         UITouch* touch = [touches anyObject];
         CGPoint point = [touch locationInView:self];
 		[_activeCard setPos:point.x - xCap:point.y - yCap];
-		[self setNeedsDisplay];
+		
+        //[self setNeedsDisplay];
+
+        // Optimize drawing size doring card moving
+        // TODO: does not work with backgroundimage
+        CGRect rect;
+        rect = _activeCard.cardAndParentsRect;
+        [self setNeedsDisplayInRect:_activeCard.cardAndParentsRect];
 	}
 }
 
