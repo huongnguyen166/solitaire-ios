@@ -13,6 +13,7 @@
 @synthesize cardsArray = _cardsArray;
 @synthesize wasteDeck1 = _wasteDeck1;
 @synthesize wasteDeck2 = _wasteDeck2;
+@synthesize backgroundImage = _backgroundImage;
 
 
 
@@ -26,6 +27,7 @@
         int cardHeight = cardWidth * 1.7;
         int cap = (screenWidth - cardWidth*7) / 8;
         
+        self.backgroundImage = [UIImage imageNamed:@"background.png"];
         
         // Create cards
         self.cardsArray =  [[NSMutableArray alloc] init];
@@ -239,6 +241,9 @@
     [_cardsArray release];
     _cardsArray = nil;
     
+    [_backgroundImage release];
+    _backgroundImage = nil;
+    
     _activeCard = nil;
     
 	// Remember to call base class dealloc
@@ -327,9 +332,10 @@
     //CGContextRef    context = UIGraphicsGetCurrentContext();
 	
     // Game background
-	[[UIColor greenColor] set];
-	UIRectFill(rect);
-	
+	//[[UIColor greenColor] set];
+	//UIRectFill(rect);
+	[self.backgroundImage drawInRect:rect];
+    
     // Draw decks
     for(Deck* deck in self.sourceDeckArray)
     {

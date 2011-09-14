@@ -14,6 +14,8 @@
 	int xCap;
 	int yCap;
 	
+    UIImage* _backgroundImage;
+    
     // Active card under user touch
 	Card* _activeCard; 
     
@@ -37,6 +39,10 @@
 -(Card*)getRandomCard;
 -(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard;
 
+
+// NOTE: "retain" in property means that 
+// object is retained before set as instance variable in property generated setter code
+@property (nonatomic, retain) UIImage* backgroundImage;
 @property (nonatomic, retain) NSMutableArray* sourceDeckArray;
 @property (nonatomic, retain) NSMutableArray* targetDeckArray;
 @property (nonatomic, retain) Deck* wasteDeck1;
