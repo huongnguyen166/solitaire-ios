@@ -67,11 +67,16 @@
     [super dealloc];
 }
 
+- (void)drawMeAndParentCard
+{
+    [self drawCard];
+    [self.cardParent drawCard];
+}
+
 - (void)drawCard
 {
     if(self.turned){ 
         [self.foregroundImage drawInRect:self.cardRect];
-        [self.cardParent drawCard];
     }
     else {
         [self.backgroundImage drawInRect:self.cardRect];
