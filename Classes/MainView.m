@@ -411,7 +411,19 @@
         _activeCard = nil;
         [self setNeedsDisplay];
     }
-    
+    // Empty waste1 deck touch
+    else if(!_activeCard && CGRectContainsPoint(self.wasteDeck1.deckRect,point)) {
+        // Copy all cards from wast2 back to waste1
+        if ([self.wasteDeck2.cardArray count]>0) {
+            
+            Card* c = [self.wasteDeck2.cardArray objectAtIndex:0];
+            // That handles all copying
+            [c changeDeckTo:self.wasteDeck2 :self.wasteDeck1];
+            c = nil;
+        }
+        [self setNeedsDisplay];
+        
+    }
     
 }
 
