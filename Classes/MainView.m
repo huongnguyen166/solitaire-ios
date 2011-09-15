@@ -299,7 +299,7 @@
     [RGB(0, 100, 0) set];
 	UIRectFill(rect);
     
-    //[self.backgroundImage drawInRect:rect];
+    //[self.backgroundImage drawInRect:self.bounds];
     
     
     
