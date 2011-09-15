@@ -96,18 +96,6 @@
     [self.cardParent cancelMove];
 }
 
--(CGRect)cardAndParentsRect
-{
-    // TODO: not good really
-    CGRect rect;
-    rect = self.cardRect;
-    rect.size.width += 100;
-    rect.size.height += 400;
-    rect.origin.x -= 50;
-    rect.origin.y -= 50;
-    return rect;
-}
-
 - (void)setPos:(int)x:(int)y
 {
     CGRect newRect = self.cardRect;
