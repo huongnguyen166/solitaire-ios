@@ -34,7 +34,7 @@ typedef enum {
 - (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height:(DeckType)type;
 - (void)addCard:(Card*)card;
 - (void)removeCard:(Card*)card;
-- (void)drawDeck; 
+- (void)drawDeck:(CGRect)rect; 
 - (Card*)getCardAtPos:(CGPoint)point;
 - (Card*)getTopCard;
 - (void)dealloc;

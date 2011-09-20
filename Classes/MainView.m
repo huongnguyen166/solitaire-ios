@@ -307,14 +307,14 @@
     // Draw decks
     for(Deck* deck in self.sourceDeckArray)
     {
-        [deck drawDeck];
+        [deck drawDeck:rect];
     }
     for(Deck* deck in self.targetDeckArray)
     {
-        [deck drawDeck];
+        [deck drawDeck:rect];
     }
-    [self.wasteDeck1 drawDeck];
-	[self.wasteDeck2 drawDeck];
+    [self.wasteDeck1 drawDeck:rect];
+	[self.wasteDeck2 drawDeck:rect];
     
     
     // Draw active card on top of all others
