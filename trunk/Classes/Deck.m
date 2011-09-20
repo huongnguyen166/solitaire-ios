@@ -97,8 +97,13 @@
 
 
 
--(void)drawDeck 
+-(void)drawDeck:(CGRect)rect
 {
+
+    // Do not draw deck if really needed
+    if(!CGRectIntersectsRect(rect,self.deckRect)) {
+        return;
+    }
     
     [[UIColor whiteColor] set];
     UIRectFrame([self drawRect]);
