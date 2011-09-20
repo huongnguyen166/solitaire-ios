@@ -448,7 +448,7 @@
         rect.origin.x -= x;
         rect.origin.y -= y;
         rect.size.width += x*2;
-        rect.size.height = self.bounds.size.height;
+        rect.size.height = self.bounds.size.height-_activeCard.cardRect.origin.y+15;
         [self setNeedsDisplayInRect:rect];
 	}
 }
