@@ -26,7 +26,7 @@
         int screenWidth = self.bounds.size.width;
         //int screenHeight = self.bounds.size.height;
         int cardWidth = screenWidth / 9;
-        int cardHeight = cardWidth * 1.7;
+        int cardHeight = cardWidth * 1.55;
         int cap = (screenWidth - cardWidth*7) / 8;
         
         self.backgroundImage = [UIImage imageNamed:@"background.png"];

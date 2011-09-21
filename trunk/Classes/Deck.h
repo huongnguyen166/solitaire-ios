@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 
-#define CARD_CAP 20;
+#define CARD_CAP 15;
 
 typedef enum {
     ESource,
