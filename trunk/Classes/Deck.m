@@ -13,11 +13,19 @@
 @synthesize deckZ = _deckZ;
 @synthesize deckType = _deckType;
 @synthesize drawRect = _drawRect;
+@synthesize cardCap = _cardCap;
 
 
 - (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height:(DeckType)type
 {
 	self = [super init];
+    
+    BOOL deviceIsPad = (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone);
+    if(deviceIsPad) 
+        _cardCap = 40;
+    else 
+        _cardCap = 15;
+        
     
     if (self)
     {
@@ -45,6 +53,18 @@
     return self;
 }
 
+- (void)setNewPos:(int)x:(int)y
+{
+    CGPoint point;
+    point.x = x;
+    point.y = y;
+    _deckRect.origin.x = point.x;    
+    _deckRect.origin.y = point.y;        
+    _drawRect.origin.x = point.x;    
+    _drawRect.origin.y = point.y;    
+}
+
+
 - (void)dealloc {
     // Rekease array
 	[_cardArray release];
@@ -58,9 +78,9 @@
     // Set card new position
     CGPoint pos;
     pos.x = self.deckRect.origin.x;
-    int cap = CARD_CAP;
+
     if (self.deckType == ESource && [self.cardArray count]>0)
-        pos.y = self.deckRect.origin.y + (cap * [self.cardArray count]-1);
+        pos.y = self.deckRect.origin.y + (_cardCap * [self.cardArray count]-1);
     else {
         pos.y = self.deckRect.origin.y;
     }
@@ -69,7 +89,7 @@
     
     // Make deck rect larger
     CGRect rec = [self deckRect];
-    rec.size = CGSizeMake(rec.size.width, rec.size.height + cap);
+    rec.size = CGSizeMake(rec.size.width, rec.size.height + _cardCap);
     [self setDeckRect:rec];
     
     // Set deck info to card

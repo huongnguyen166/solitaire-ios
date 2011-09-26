@@ -105,7 +105,7 @@
     newRect.origin = point;
 	self.cardRect = newRect;
     
-    int cap = CARD_CAP;
+    int cap = self.ownerDeck.cardCap;
     
     [self.cardParent setPos:x:y+cap];
 }

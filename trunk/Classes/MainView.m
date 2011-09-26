@@ -18,176 +18,189 @@
 @synthesize backgroundImage = _backgroundImage;
 
 
+-(void) setPositions
+{
+    int screenWidth = self.bounds.size.width;
+    //int screenHeight = self.bounds.size.height;
+    NSLog(@"%d",screenWidth);
+
+    if (self.cardsArray != nil)
+        return;
+    
+    
+    
+    int cardWidth = screenWidth / 9;
+    int cardHeight = cardWidth * 1.55;
+    int cap = (screenWidth - cardWidth*7) / 8;
+    
+    self.backgroundImage = [UIImage imageNamed:@"background.png"];
+    
+    // Create cards
+    self.cardsArray =  [[NSMutableArray alloc] init];
+    [self createCards:cardWidth:cardHeight];
+    
+    // Array for the source decks
+    self.sourceDeckArray = [[NSMutableArray alloc] init];
+    
+    // Source decks
+    Deck* sourceDeck = [Deck alloc];
+    [sourceDeck initWithData:cap:cardHeight*2:1:cardWidth:cardHeight:ESource];
+    for (int i=0;i<=1;i++)
+    {
+        Card* card = [self getRandomCard];
+        [sourceDeck addCard:card];
+        [card release];
+        card = nil;
+    }
+    [[sourceDeck.cardArray lastObject] setTurned:true];
+    [self.sourceDeckArray addObject:sourceDeck];
+    [sourceDeck release];
+    sourceDeck = nil;
+    
+    
+    sourceDeck = [Deck alloc];
+    [sourceDeck initWithData:cap*2+cardWidth:cardHeight*2:2:cardWidth:cardHeight:ESource];
+    for (int i=0;i<=2;i++)
+    {
+        Card* card = [self getRandomCard];
+        [sourceDeck addCard:card];
+        [card release];
+        card = nil;
+    }
+    [[sourceDeck.cardArray lastObject] setTurned:true];
+    [self.sourceDeckArray addObject:sourceDeck];
+    [sourceDeck release];
+    sourceDeck = nil;
+    
+    
+    sourceDeck = [Deck alloc];
+    [sourceDeck initWithData:cap*3+cardWidth*2:cardHeight*2:2:cardWidth:cardHeight:ESource];
+    for (int i=0;i<=3;i++)
+    {
+        Card* card = [self getRandomCard];
+        [sourceDeck addCard:card];
+        [card release];
+        card = nil;
+    }
+    [[sourceDeck.cardArray lastObject] setTurned:true];
+    [self.sourceDeckArray addObject:sourceDeck];
+    [sourceDeck release];
+    sourceDeck = nil;
+    
+    
+    sourceDeck = [Deck alloc];
+    [sourceDeck initWithData:cap*4+cardWidth*3:cardHeight*2:2:cardWidth:cardHeight:ESource];
+    for (int i=0;i<=4;i++)
+    {
+        Card* card = [self getRandomCard];
+        [sourceDeck addCard:card];
+        [card release];
+        card = nil;
+    }
+    [[sourceDeck.cardArray lastObject] setTurned:true];
+    [self.sourceDeckArray addObject:sourceDeck];
+    [sourceDeck release];
+    sourceDeck = nil;
+    
+    
+    sourceDeck = [Deck alloc];
+    [sourceDeck initWithData:cap*5+cardWidth*4:cardHeight*2:2:cardWidth:cardHeight:ESource];
+    for (int i=0;i<=5;i++)
+    {
+        Card* card = [self getRandomCard];
+        [sourceDeck addCard:card];
+        [card release];
+        card = nil;
+    }
+    [[sourceDeck.cardArray lastObject] setTurned:true];
+    [self.sourceDeckArray addObject:sourceDeck];
+    [sourceDeck release];
+    sourceDeck = nil;
+    
+    
+    sourceDeck = [Deck alloc];
+    [sourceDeck initWithData:cap*6+cardWidth*5:cardHeight*2:2:cardWidth:cardHeight:ESource];
+    for (int i=0;i<=6;i++)
+    {
+        Card* card = [self getRandomCard];
+        [sourceDeck addCard:card];
+        [card release];
+        card = nil;
+    }
+    [[sourceDeck.cardArray lastObject] setTurned:true];
+    [self.sourceDeckArray addObject:sourceDeck];
+    [sourceDeck release];
+    sourceDeck = nil;
+    
+    
+    sourceDeck = [Deck alloc];
+    [sourceDeck initWithData:cap*7+cardWidth*6:cardHeight*2:2:cardWidth:cardHeight:ESource];
+    for (int i=0;i<=7;i++)
+    {
+        Card* card = [self getRandomCard];
+        [sourceDeck addCard:card];
+        [card release];
+        card = nil;
+    }
+    [[sourceDeck.cardArray lastObject] setTurned:true];
+    [self.sourceDeckArray addObject:sourceDeck];
+    [sourceDeck release];
+    sourceDeck = nil;
+    
+    
+    
+    
+    // Array for the target decks
+    self.targetDeckArray = [[NSMutableArray alloc] init];
+    
+    // Target decks
+    Deck* targetDeck = [Deck alloc];
+    [targetDeck initWithData:cap*4+cardWidth*3:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
+    [self.targetDeckArray addObject:targetDeck];
+    [targetDeck release];
+    targetDeck = nil;
+    
+    
+    targetDeck = [Deck alloc];
+    [targetDeck initWithData:cap*5+cardWidth*4:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
+    [self.targetDeckArray addObject:targetDeck];
+    [targetDeck release];
+    targetDeck = nil;
+    
+    targetDeck = [Deck alloc];
+    [targetDeck initWithData:cap*6+cardWidth*5:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
+    [self.targetDeckArray addObject:targetDeck];
+    [targetDeck release];
+    targetDeck = nil;
+    
+    targetDeck = [Deck alloc];
+    [targetDeck initWithData:cap*7+cardWidth*6:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
+    [self.targetDeckArray addObject:targetDeck];
+    [targetDeck release];
+    targetDeck = nil;
+    
+    
+    // Waste decks
+    self.wasteDeck1 = [Deck alloc];
+    [self.wasteDeck1 initWithData:cap:cardHeight*0.5:2:cardWidth:cardHeight:EWaste1];
+    while ([self.cardsArray count] > 0) {
+        Card* card = [self getRandomCard];
+        [self.wasteDeck1 addCard:card];
+        [card release];
+        card = nil;
+    }
+    
+    self.wasteDeck2 = [Deck alloc];
+    [self.wasteDeck2 initWithData:cap*2+cardWidth:cardHeight*0.5:2:cardWidth:cardHeight:EWaste2];
+
+    
+}
 
 -(id) initWithCoder:(NSCoder*)sourceCoder
 {
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
-        int screenWidth = self.bounds.size.width;
-        //int screenHeight = self.bounds.size.height;
-        int cardWidth = screenWidth / 9;
-        int cardHeight = cardWidth * 1.55;
-        int cap = (screenWidth - cardWidth*7) / 8;
-        
-        self.backgroundImage = [UIImage imageNamed:@"background.png"];
-        
-        // Create cards
-        self.cardsArray =  [[NSMutableArray alloc] init];
-        [self createCards:cardWidth:cardHeight];
-        
-        // Array for the source decks
-        self.sourceDeckArray = [[NSMutableArray alloc] init];
-        
-        // Source decks
-        Deck* sourceDeck = [Deck alloc];
-        [sourceDeck initWithData:cap:cardHeight*2:1:cardWidth:cardHeight:ESource];
-		for (int i=0;i<=1;i++)
-		{
-            Card* card = [self getRandomCard];
-            [sourceDeck addCard:card];
-            [card release];
-            card = nil;
-		}
-        [[sourceDeck.cardArray lastObject] setTurned:true];
-        [self.sourceDeckArray addObject:sourceDeck];
-        [sourceDeck release];
-        sourceDeck = nil;
-        
-        
-        sourceDeck = [Deck alloc];
-        [sourceDeck initWithData:cap*2+cardWidth:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<=2;i++)
-		{
-            Card* card = [self getRandomCard];
-            [sourceDeck addCard:card];
-            [card release];
-            card = nil;
-		}
-        [[sourceDeck.cardArray lastObject] setTurned:true];
-        [self.sourceDeckArray addObject:sourceDeck];
-        [sourceDeck release];
-        sourceDeck = nil;
 
-        
-        sourceDeck = [Deck alloc];
-        [sourceDeck initWithData:cap*3+cardWidth*2:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<=3;i++)
-		{
-            Card* card = [self getRandomCard];
-            [sourceDeck addCard:card];
-            [card release];
-            card = nil;
-		}
-        [[sourceDeck.cardArray lastObject] setTurned:true];
-        [self.sourceDeckArray addObject:sourceDeck];
-        [sourceDeck release];
-        sourceDeck = nil;
-
-        
-        sourceDeck = [Deck alloc];
-        [sourceDeck initWithData:cap*4+cardWidth*3:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<=4;i++)
-		{
-            Card* card = [self getRandomCard];
-            [sourceDeck addCard:card];
-            [card release];
-            card = nil;
-		}
-        [[sourceDeck.cardArray lastObject] setTurned:true];
-        [self.sourceDeckArray addObject:sourceDeck];
-        [sourceDeck release];
-        sourceDeck = nil;
-
-        
-        sourceDeck = [Deck alloc];
-        [sourceDeck initWithData:cap*5+cardWidth*4:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<=5;i++)
-		{
-            Card* card = [self getRandomCard];
-            [sourceDeck addCard:card];
-            [card release];
-            card = nil;
-		}
-        [[sourceDeck.cardArray lastObject] setTurned:true];
-        [self.sourceDeckArray addObject:sourceDeck];
-        [sourceDeck release];
-        sourceDeck = nil;
-
-        
-        sourceDeck = [Deck alloc];
-        [sourceDeck initWithData:cap*6+cardWidth*5:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<=6;i++)
-		{
-            Card* card = [self getRandomCard];
-            [sourceDeck addCard:card];
-            [card release];
-            card = nil;
-		}
-        [[sourceDeck.cardArray lastObject] setTurned:true];
-        [self.sourceDeckArray addObject:sourceDeck];
-        [sourceDeck release];
-        sourceDeck = nil;
-
-        
-        sourceDeck = [Deck alloc];
-        [sourceDeck initWithData:cap*7+cardWidth*6:cardHeight*2:2:cardWidth:cardHeight:ESource];
-		for (int i=0;i<=7;i++)
-		{
-            Card* card = [self getRandomCard];
-            [sourceDeck addCard:card];
-            [card release];
-            card = nil;
-		}
-        [[sourceDeck.cardArray lastObject] setTurned:true];
-        [self.sourceDeckArray addObject:sourceDeck];
-        [sourceDeck release];
-        sourceDeck = nil;
-        
-        
-        
-        
-        // Array for the target decks
-        self.targetDeckArray = [[NSMutableArray alloc] init];
-        
-        // Target decks
-        Deck* targetDeck = [Deck alloc];
-        [targetDeck initWithData:cap*4+cardWidth*3:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
-        [self.targetDeckArray addObject:targetDeck];
-        [targetDeck release];
-        targetDeck = nil;
-
- 
-        targetDeck = [Deck alloc];
-        [targetDeck initWithData:cap*5+cardWidth*4:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
-        [self.targetDeckArray addObject:targetDeck];
-        [targetDeck release];
-        targetDeck = nil;
-
-        targetDeck = [Deck alloc];
-        [targetDeck initWithData:cap*6+cardWidth*5:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
-        [self.targetDeckArray addObject:targetDeck];
-        [targetDeck release];
-        targetDeck = nil;
-        
-        targetDeck = [Deck alloc];
-        [targetDeck initWithData:cap*7+cardWidth*6:cardHeight*0.5:2:cardWidth:cardHeight:ETarget];
-        [self.targetDeckArray addObject:targetDeck];
-        [targetDeck release];
-        targetDeck = nil;
-        
-        
-        // Waste decks
-        self.wasteDeck1 = [Deck alloc];
-        [self.wasteDeck1 initWithData:cap:cardHeight*0.5:2:cardWidth:cardHeight:EWaste1];
-        while ([self.cardsArray count] > 0) {
-            Card* card = [self getRandomCard];
-            [self.wasteDeck1 addCard:card];
-            [card release];
-            card = nil;
-        }
-        
-        self.wasteDeck2 = [Deck alloc];
-        [self.wasteDeck2 initWithData:cap*2+cardWidth:cardHeight*0.5:2:cardWidth:cardHeight:EWaste2];
 	}
 	
     return self;
