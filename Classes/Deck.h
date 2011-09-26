@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 
-#define CARD_CAP 15;
+//#define CARD_CAP 15;
 
 typedef enum {
     ESource,
@@ -25,6 +25,7 @@ typedef enum {
     CGRect _drawRect;
     int _deckZ;
     DeckType _deckType;
+    int _cardCap;
 
 
 }
@@ -32,6 +33,7 @@ typedef enum {
 
 
 - (id)initWithData:(int)x:(int)y:(int)dId:(int)width:(int)height:(DeckType)type;
+- (void)setNewPos:(int)x:(int)y;
 - (void)addCard:(Card*)card;
 - (void)removeCard:(Card*)card;
 - (void)drawDeck:(CGRect)rect; 
@@ -46,5 +48,6 @@ typedef enum {
 @property int deckZ;
 @property DeckType deckType;
 @property CGRect drawRect;
+@property int cardCap;
 
 @end
