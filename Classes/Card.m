@@ -70,7 +70,7 @@
 - (void)drawMeAndParentCard
 {
     [self drawCard];
-    [self.cardParent drawCard];
+    [self.cardParent drawMeAndParentCard];
 }
 
 - (void)drawCard
