@@ -30,7 +30,7 @@
     
     
     int cardWidth = screenWidth / 9;
-    int cardHeight = cardWidth * 1.55;
+    int cardHeight = cardWidth * 1.65;
     int cap = (screenWidth - cardWidth*7) / 8;
     
     self.backgroundImage = [UIImage imageNamed:@"background.png"];
@@ -461,7 +461,16 @@
         rect.origin.x -= x;
         rect.origin.y -= y;
         rect.size.width += x*2;
-        rect.size.height = self.bounds.size.height-_activeCard.cardRect.origin.y+15;
+ 
+        //rect.size.height = self.bounds.size.height;
+        rect.size.height = self.bounds.size.height * 0.5;
+        
+        //int ccnt = [[_activeCard.ownerDeck cardArray]count];
+        //int dhgt = [_activeCard.ownerDeck cardCap] * ccnt + _activeCard.cardRect.size.height+30;
+        //rect.size.height = dhgt;
+        
+        
+        
         [self setNeedsDisplayInRect:rect];
 	}
 }
