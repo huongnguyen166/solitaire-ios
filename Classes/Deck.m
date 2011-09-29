@@ -22,7 +22,7 @@
     
     BOOL deviceIsPad = (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPhone);
     if(deviceIsPad) 
-        _cardCap = 40;
+        _cardCap = 30;
     else 
         _cardCap = 15;
         
@@ -47,7 +47,12 @@
         // TODO: remove, not in use
         //self.deckId = dId;
         
-        self.drawRect = self.deckRect;
+        self.drawRect = CGRectMake(self.deckRect.origin.x+2,
+                                   self.deckRect.origin.y+2,
+                                   self.deckRect.size.width-4,
+                                   self.deckRect.size.height-4);
+       
+        
         
     }
     return self;
