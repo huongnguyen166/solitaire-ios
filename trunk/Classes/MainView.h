@@ -39,7 +39,7 @@
 -(Card*)findActiveCard:(CGPoint)point;
 -(Deck*)findActiveDeck:(CGPoint)point;
 -(void)createCards:(int)width:(int)height;
--(Card*)getRandomCard;
+-(id)getRandomCard;
 -(BOOL)acceptCardMove:(Deck*)from:(Deck*)to:(Card*)onTopOfCard;
 
 

@@ -279,9 +279,9 @@
 }
 
 
--(Card*)getRandomCard
+-(id)getRandomCard
 {
-    Card* ret = nil;
+    id ret;
     int r = -1;
             
     int max = ([self.cardsArray count]-1);
