@@ -43,11 +43,11 @@ typedef enum {
 
 
 @property (nonatomic, retain) NSMutableArray* cardArray;
-@property int deckId;
-@property CGRect deckRect;
-@property int deckZ;
-@property DeckType deckType;
-@property CGRect drawRect;
-@property int cardCap;
+@property (assign) int deckId;
+@property (assign) CGRect deckRect;
+@property (assign) int deckZ;
+@property (assign) DeckType deckType;
+@property (assign) CGRect drawRect;
+@property (assign) int cardCap;
 
 @end
