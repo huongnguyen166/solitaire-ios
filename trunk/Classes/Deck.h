@@ -18,7 +18,7 @@ typedef enum {
 
 
 @interface Deck : NSObject {
-
+    
     NSMutableArray* _cardArray;
     int _deckId;
 	CGRect _deckRect;
@@ -26,8 +26,8 @@ typedef enum {
     int _deckZ;
     DeckType _deckType;
     int _cardCap;
-
-
+    
+    
 }
 
 

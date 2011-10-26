@@ -23,34 +23,34 @@
 
 
 - (id)initWithData:(CardType)type:(NSString*)cardName:
-    (int)x:(int)y:(int)cId:(int)z:(int)width:(int)height
+(int)x:(int)y:(int)cId:(int)z:(int)width:(int)height
 {
 	self = [super init];
-
+    
     if (self)
     {
-    // Load card graphics
-	self.foregroundImage = [UIImage imageNamed:cardName];
-    self.backgroundImage = [UIImage imageNamed:@"cardback.png"];
-	
-    self.cardType = type;
-    // or for example
-    //[self setCardType:type];
+        // Load card graphics
+        self.foregroundImage = [UIImage imageNamed:cardName];
+        self.backgroundImage = [UIImage imageNamed:@"cardback.png"];
         
-    self.turned = false;
-    
-    self.cardId = cId;
+        self.cardType = type;
+        // or for example
+        //[self setCardType:type];
         
-    // Set card position and z order
-	CGPoint point;
-	point.x = x;
-	point.y = y;
-    CGRect rect;
-    rect.origin = point;
-    rect.size.width = width;
-    rect.size.height = height;
-    self.cardRect = rect;        
-	self.zOrder = z;
+        self.turned = false;
+        
+        self.cardId = cId;
+        
+        // Set card position and z order
+        CGPoint point;
+        point.x = x;
+        point.y = y;
+        CGRect rect;
+        rect.origin = point;
+        rect.size.width = width;
+        rect.size.height = height;
+        self.cardRect = rect;        
+        self.zOrder = z;
     }
 	
 	return self;
@@ -59,7 +59,7 @@
 - (void)dealloc {
 	[_backgroundImage release];
     _backgroundImage = nil;
-
+    
     [_foregroundImage release];
     _foregroundImage = nil;
     
@@ -114,7 +114,7 @@
 {
     _ownerDeck = deck;
     [self.cardParent setDeck:deck];
-
+    
 }
 
 -(BOOL)changeDeckTo:(Deck*)fromDeck:(Deck*)toDeck
@@ -122,7 +122,7 @@
     if (fromDeck != toDeck){
         // Add to new deck
         [toDeck addCard:self];
-    
+        
         // Remove from old deck
         [fromDeck removeCard:self];
         
@@ -134,7 +134,7 @@
         [self.cardParent changeDeckTo:fromDeck:toDeck];
         
         return TRUE;
-        }
+    }
     return FALSE;
 }
 

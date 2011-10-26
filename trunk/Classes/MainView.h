@@ -44,7 +44,8 @@
 
 
 // NOTE: "retain" in property means that 
-// object is retained before set as instance variable in property generated setter code
+// object is retained (add reference count +1) 
+// before set as instance variable in property generated setter code
 @property (nonatomic, retain) UIImage* backgroundImage;
 @property (nonatomic, retain) NSMutableArray* sourceDeckArray;
 @property (nonatomic, retain) NSMutableArray* targetDeckArray;
