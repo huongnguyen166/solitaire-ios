@@ -21,6 +21,7 @@
     // Override point for customization after application launch.
 
 	// Set the view controller as the window's root view controller and display.
+    // Set SolitaireViewController as main view controller and show window
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     

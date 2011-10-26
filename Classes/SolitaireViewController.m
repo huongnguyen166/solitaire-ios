@@ -12,9 +12,9 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // Set card positions just before MainView will appear
     MainView* mv = (MainView*)self.view;
     [mv setPositions];
-    
 }
 
 

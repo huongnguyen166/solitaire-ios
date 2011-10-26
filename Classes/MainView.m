@@ -23,7 +23,7 @@
     int screenWidth = self.bounds.size.width;
     //int screenHeight = self.bounds.size.height;
     NSLog(@"%d",screenWidth);
-
+    
     if (self.cardsArray != nil)
         return;
     
@@ -192,7 +192,7 @@
     
     self.wasteDeck2 = [Deck alloc];
     [self.wasteDeck2 initWithData:cap*2+cardWidth:cardHeight*0.5:2:cardWidth:cardHeight:EWaste2];
-
+    
     
 }
 
@@ -200,7 +200,7 @@
 {
 	if( (self = [super initWithCoder:sourceCoder]))
 	{
-
+        
 	}
 	
     return self;
@@ -209,7 +209,7 @@
 - (void)dealloc {
 	[_sourceDeckArray release];
     _sourceDeckArray = nil;
-        
+    
     [_wasteDeck1 release];
     _wasteDeck1 = nil;
     
@@ -241,7 +241,7 @@
         [card release];
         card = nil;
     }
-
+    
     for (int i=1;i<=13;i++) {
         Card* card = [Card alloc];
         [card setBlack:false];
@@ -283,7 +283,7 @@
 {
     id ret;
     int r = -1;
-            
+    
     int max = ([self.cardsArray count]-1);
     if (max>0)
         r = arc4random() % max;
@@ -360,7 +360,7 @@
         }
         card = nil;
     }    
-
+    
     if(!card)
         card = [self.wasteDeck1 getCardAtPos:point];
     
@@ -451,7 +451,7 @@
 		[_activeCard setPos:point.x - xCap:point.y - yCap];
 		
         //[self setNeedsDisplay];
-
+        
         // Optimize drawing with clipping when user moves cards
         int x = ABS(_prevPoint.x - point.x) + 15;
         int y = ABS(_prevPoint.y - point.y) + 15;
@@ -461,7 +461,7 @@
         rect.origin.x -= x;
         rect.origin.y -= y;
         rect.size.width += x*2;
- 
+        
         //rect.size.height = self.bounds.size.height;
         rect.size.height = self.bounds.size.height * 0.5;
         
@@ -483,7 +483,7 @@
         CGPoint point = [touch locationInView:self];
 		[_activeCard setPos:point.x - xCap:point.y - yCap];
 		
-    
+        
         // Change car deck to another
         Deck* toDeck = [self findActiveDeck:point];
         if (toDeck) {
@@ -501,7 +501,7 @@
         } else {
             [_activeCard cancelMove];
         }
-    
+        
         
         [self setNeedsDisplay];
 		_activeCard = nil;
@@ -514,11 +514,11 @@
     
     if (onTopOfCard && !onTopOfCard.turned)
         return false;
-     
+    
     if (from.deckType != ESource && from.deckType != EWaste2)
         return false;
     
- 
+    
     if (to.deckType != ESource && to.deckType != ETarget)
         return false;
     
@@ -531,8 +531,8 @@
         if (to.deckType == ESource) {
             if(_activeCard.cardType == onTopOfCard.cardType || 
                onTopOfCard.cardId != _activeCard.cardId+1 || 
-                onTopOfCard.black == _activeCard.black) {
-                    return false;
+               onTopOfCard.black == _activeCard.black) {
+                return false;
             }            
         } else if (to.deckType == ETarget) {
             if(onTopOfCard.cardId+1 != _activeCard.cardId ||

@@ -25,7 +25,7 @@
         _cardCap = 30;
     else 
         _cardCap = 15;
-        
+    
     
     if (self)
     {
@@ -43,7 +43,7 @@
         rect.size.width = width;
         rect.size.height = height;
         self.deckRect = rect;
-
+        
         // TODO: remove, not in use
         //self.deckId = dId;
         
@@ -51,7 +51,7 @@
                                    self.deckRect.origin.y+2,
                                    self.deckRect.size.width-4,
                                    self.deckRect.size.height-4);
-       
+        
         
         
     }
@@ -83,13 +83,13 @@
     // Set card new position
     CGPoint pos;
     pos.x = self.deckRect.origin.x;
-
+    
     if (self.deckType == ESource && [self.cardArray count]>0)
         pos.y = self.deckRect.origin.y + (_cardCap * [self.cardArray count]-1);
     else {
         pos.y = self.deckRect.origin.y;
     }
-
+    
     [card setPos:pos.x:pos.y];
     
     // Make deck rect larger
@@ -109,7 +109,7 @@
         Card* childCard = [self.cardArray lastObject];
         childCard.cardParent = card;
     } 
-        
+    
     
     // Card ownership is transfered to array
     [self.cardArray addObject:card];    
@@ -124,7 +124,7 @@
 
 -(void)drawDeck:(CGRect)rect
 {
-
+    
     // Do not draw deck if really needed
     if(!CGRectIntersectsRect(rect,self.deckRect)) {
         return;
